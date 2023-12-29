@@ -92,7 +92,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="localStorage.setItem('test', 'Ciao');">
     <header>
         <h1>Analisi Complessa</h1>
     </header>
@@ -131,8 +131,10 @@
     
     <script>
         function redirecttohtml() {
-            window.location.href = 'scheda_domanda.html';
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'scheda_domande.html';
         }
     </script>
 </body>
 </html>
+<!-- Vedi link https://it.javascript.info/localstorage -->
