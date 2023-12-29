@@ -1,1 +1,62 @@
-Hello Word
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheda 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* colore di sfondo */
+        }
+
+        header {
+            background-color: #ffd700; /* giallo */
+            padding: 10px;
+            text-align: right;
+            border-radius: 10px 10px 0 0; /* forme arrotondate in alto */
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        img {
+            border-radius: 10px; /* forma arrotondata per l'immagine */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #4caf50; /* colore verde */
+            color: #fff; /* testo bianco */
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button + button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Scheda 1</h1>
+    </header>
+    <main>
+        <img src="immagine1.png" alt="Immagine 1" width="300">
+        <button>Pulsante 1</button>
+        <button>Pulsante 2</button>
+    </main>
+</body>
+</html>
+
