@@ -70,6 +70,25 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
+            position: relative;
+            overflow: hidden; /* Nasconde il contenuto in eccesso */
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0; /* Inizialmente larghezza zero */
+            height: 5px; /* Altezza della barra di caricamento */
+            background-color: #ddd; /* Colore grigio della barra di caricamento */
+        }
+
+        .percentage {
+            position: absolute;
+            bottom: 5px; /* Posiziona la percentuale sopra la barra di caricamento */
+            right: 5px; /* Posizione a destra del pulsante */
+            font-size: 12px;
+            color: #fff; /* Colore del testo grigio chiaro */
         }
     </style>
 </head>
@@ -79,16 +98,34 @@
     </header>
     <main>
         <div class="button-container">
-            <button>Lezione 1</button>
-            <button>Lezione 2</button>
+            <button>Lezione 1
+                <div class="progress-bar" style="width: 50%;"></div>
+                <span class="percentage">50%</span>
+            </button>
+            <button>Lezione 2
+                <div class="progress-bar" style="width: 75%;"></div>
+                <span class="percentage">75%</span>
+            </button>
         </div>
         <div class="button-container">
-            <button>Lezione 3</button>
-            <button>Lezione 4</button>
+            <button>Lezione 3
+                <div class="progress-bar" style="width: 30%;"></div>
+                <span class="percentage">30%</span>
+            </button>
+            <button>Lezione 4
+                <div class="progress-bar" style="width: 90%;"></div>
+                <span class="percentage">90%</span>
+            </button>
         </div>
         <div class="button-container">
-            <button>Lezione 5</button>
-            <button>Lezione 6</button>
+            <button>Lezione 5
+                <div class="progress-bar" style="width: 20%;"></div>
+                <span class="percentage">20%</span>
+            </button>
+            <button>Lezione 6
+                <div class="progress-bar" style="width: 60%;"></div>
+                <span class="percentage">60%</span>
+            </button>
         </div>
     </main>
 </body>
