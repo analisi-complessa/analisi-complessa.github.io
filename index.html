@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheda 1</title>
+    <title>Analisi Complessa</title>
     <style>
 
         /* Font: Computer Modern */
@@ -98,7 +98,7 @@
     </header>
     <main>
         <div class="button-container">
-            <button>Lezione 1
+            <button onclick="redirecttohtml()">Lezione 1
                 <div class="progress-bar" style="width: 50%;"></div>
                 <span class="percentage">50%</span>
             </button>
@@ -128,5 +128,11 @@
             </button>
         </div>
     </main>
+    
+    <script>
+        function redirecttohtml() {
+            window.location.href = 'scheda_domanda.html';
+        }
+    </script>
 </body>
 </html>
