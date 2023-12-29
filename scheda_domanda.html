@@ -40,6 +40,7 @@
         header {
             background-color: #ffd700; /* giallo */
             padding: 10px;
+            padding-left: 40px;
             text-align: left;
             border-radius: 0 0 0 0;
         }
@@ -52,11 +53,6 @@
             min-height: 80vh;
             padding: 20px;
         }
-
-        img {
-            border-radius: 10px; /* forma arrotondata per l'immagine */
-        }
-
         button {
             margin-top: 20px;
             padding: 20px 40px; /* aumenta le dimensioni del pulsante */
@@ -72,12 +68,14 @@
         .button-container {
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            position: absolute;
+            bottom: 40px;
+            margin-top: 150px;
             margin-bottom: 20px;
         }  
 
         button + button {
-            margin-left: 20px; /* aumenta la distanza tra i pulsanti */
+            margin-left: 300px; /* aumenta la distanza tra i pulsanti */
         }
 
         /* Popup */
@@ -110,6 +108,25 @@
             right: 10px;
             cursor: pointer;
         }
+
+        /* Aggiunto stile per pulsanti nel popup */
+        /* Aggiunto stile per pulsanti nel popup */
+        /* Aggiunto stile per pulsanti nel popup */
+        .popup-buttons {
+            display: flex;
+            justify-content: space-between; /* Distribuisci i pulsanti uniformemente nello spazio disponibile */
+            align-items: center; /* Centra i pulsanti verticalmente */
+            position: absolute;
+            left: 0px;
+            bottom: 0; /* Posiziona il contenitore dei pulsanti in basso */
+            width: 100%; /* Rendi il contenitore dei pulsanti largo quanto il popup */
+            padding: 0px;
+            padding-bottom: 18px; /* Aggiunto padding per separare i pulsanti dal bordo */
+        }
+
+        .popup-buttons button {
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -119,8 +136,8 @@
     <main>
         <img src="immagine1.png" alt="Immagine 1" width="300">
         <div class="button-container">
-            <button>Pulsante 1</button>
-            <button onclick="openPopup()">Pulsante 2</button>
+            <button onclick="exit()">Esci</button>
+            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <!-- Risposta -->
@@ -130,6 +147,12 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
+
+                <!-- Pulsanti nel popup -->
+                <div class="popup-buttons">
+                    <button onclick="redo()">Non ho capito</button>
+                    <button onclick="goForward()">Vai Avanti</button>
+                </div>
             </div>
         </div>
     </main>
@@ -141,6 +164,20 @@
 
         function closePopup() {
             document.getElementById("popupOverlay").style.display = "none";
+        }
+
+        function exit() {
+            window.location.href = 'index.html';
+        }
+
+        function redo() {
+            // Aggiungi qui l'azione desiderata per "Vai Avanti"
+            alert("Azione per 'Non ho capito'");
+        }
+
+        function goForward() {
+            // Aggiungi qui l'azione desiderata per "Vai Avanti"
+            alert("Azione per 'Vai Avanti'");
         }
     </script>
 </body>
