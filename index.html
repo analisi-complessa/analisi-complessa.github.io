@@ -32,8 +32,13 @@
             border-radius: 10px; /* forma arrotondata per l'immagine */
         }
 
-        button {
+        .button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
+        }
+
+        button {
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #4caf50; /* colore verde */
@@ -41,10 +46,7 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
-        }
-
-        button + button {
-            margin-left: 10px;
+            margin: 0 5px; /* margin tra i pulsanti */
         }
     </style>
 </head>
@@ -54,9 +56,10 @@
     </header>
     <main>
         <img src="immagine1.png" alt="Immagine 1" width="300">
-        <button>Pulsante 1</button>
-        <button>Pulsante 2</button>
+        <div class="button-container">
+            <button>Pulsante 1</button>
+            <button>Pulsante 2</button>
+        </div>
     </main>
 </body>
 </html>
-
