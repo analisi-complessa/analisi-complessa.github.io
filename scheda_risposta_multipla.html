@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scheda 1</title>
     <style>
-
         /* Font: Computer Modern */
-
         @font-face {
             font-family: "Computer Modern";
             src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
         }
+
         @font-face {
             font-family: "Computer Modern";
             src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
             font-weight: bold;
         }
+
         @font-face {
             font-family: "Computer Modern";
             src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
             font-style: italic, oblique;
         }
+
         @font-face {
             font-family: "Computer Modern";
             src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
@@ -53,16 +55,39 @@
             min-height: 80vh;
             padding: 20px;
         }
+
+        img {
+            margin-bottom: 20px; /* Aumenta la distanza dalla immagine */
+        }
+
+        .answers-container {
+            display: flex;
+            flex-wrap: wrap; /* Per consentire il wrap su più righe */
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 60%; /* Riduci la larghezza per rendere più piccoli i pulsanti */
+        }
+
+        .answer-box {
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            padding: 10px;
+            width: 40%; /* Riduci la larghezza per rendere più stretti i pulsanti */
+            margin-bottom: 10px; /* Aggiungi spazio tra i pulsanti */
+            text-align: center;
+            cursor: pointer;
+        }
+
         button {
             margin-top: 20px;
-            padding: 20px 40px; /* aumenta le dimensioni del pulsante */
+            padding: 20px 40px;
             border-radius: 10px;
-            background-color: #4caf50; /* colore verde */
-            color: #fff; /* testo bianco */
+            background-color: #4caf50;
+            color: #fff;
             border: none;
             cursor: pointer;
             font-size: 16px;
-            margin: 0 20px; /* aumenta il margin tra i pulsanti */
+            margin: 0 20px;
         }
 
         .button-container {
@@ -70,12 +95,12 @@
             justify-content: center;
             position: absolute;
             bottom: 40px;
-            margin-top: 150px;
+            margin-top: 20px; /* Riduci la distanza dal basso */
             margin-bottom: 20px;
-        }  
+        }
 
-        button + button {
-            margin-left: 300px; /* aumenta la distanza tra i pulsanti */
+        button+button {
+            margin-left: 20px; /* Aumenta la distanza tra i pulsanti */
         }
 
         /* Popup */
@@ -110,18 +135,16 @@
         }
 
         /* Aggiunto stile per pulsanti nel popup */
-        /* Aggiunto stile per pulsanti nel popup */
-        /* Aggiunto stile per pulsanti nel popup */
         .popup-buttons {
             display: flex;
-            justify-content: space-between; /* Distribuisci i pulsanti uniformemente nello spazio disponibile */
-            align-items: center; /* Centra i pulsanti verticalmente */
+            justify-content: space-between;
+            align-items: center;
             position: absolute;
             left: 0px;
-            bottom: 0; /* Posiziona il contenitore dei pulsanti in basso */
-            width: 100%; /* Rendi il contenitore dei pulsanti largo quanto il popup */
+            bottom: 0;
+            width: 100%;
             padding: 0px;
-            padding-bottom: 18px; /* Aggiunto padding per separare i pulsanti dal bordo */
+            padding-bottom: 18px;
         }
 
         .popup-buttons button {
@@ -129,12 +152,21 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Scheda 1</h1>
     </header>
     <main>
         <img src="immagine1.png" alt="Immagine 1" width="300">
+        <br>
+        <!-- Risposte multiple -->
+        <div class="answers-container">
+            <div class="answer-box" onclick="selectAnswer('A')">A</div>
+            <div class="answer-box" onclick="selectAnswer('B')">B</div>
+            <div class="answer-box" onclick="selectAnswer('C')">C</div>
+            <div class="answer-box" onclick="selectAnswer('D')">D</div>
+        </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
             <button onclick="openPopup()">Mostra Risposta</button>
@@ -145,7 +177,9 @@
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
                 </p>
 
                 <!-- Pulsanti nel popup -->
@@ -179,6 +213,13 @@
             // Aggiungi qui l'azione desiderata per "Vai Avanti"
             alert("Azione per 'Vai Avanti'");
         }
+
+        // Funzione per gestire la selezione di una risposta
+        function selectAnswer(answer) {
+            // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
+            alert("Hai selezionato la risposta " + answer);
+        }
     </script>
 </body>
+
 </html>

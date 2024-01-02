@@ -1,0 +1,523 @@
+% PACCHETTI FONDAMENTLAI
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[babel]{csquotes}
+\usepackage[style=numeric]{biblatex}
+\usepackage{microtype}
+\usepackage{graphicx} % inserire immagini
+\usepackage{subfig} % sottofigure
+\usepackage{multicol} % due colonne
+\usepackage{ulem} % sottolineare
+\usepackage{lipsum} % lorem ipsum
+\usepackage{xcolor} % colori in latex
+\usepackage{parskip} % rimuove l'indentazione dei nuovi paragrafi 
+\usepackage{centernot}
+\usepackage[outline]{contour}\contourlength{3pt}
+\usepackage{fancyhdr}
+\usepackage{imakeidx}%creare indice in fondo
+\usepackage{layout}
+
+% pacchetti matematica
+\usepackage[leqno,intlimits]{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{dsfont}
+\usepackage{mathrsfs}
+\usepackage{cancel} % semplificare
+\usepackage{polynom} %divisione tra polinomi
+\usepackage{forest} % grafi ad albero
+\usepackage{booktabs} % tabelle
+\usepackage{commath} %simboli e differenziali
+\usepackage{bm} %bold
+\usepackage[fulladjust]{marginnote} %to use marginnote for date notes
+\usepackage{arrayjobx}%array
+%%%%%%%%%%%%%
+
+%%%% QUIVER
+\newcommand{\duepunti}{\,\mathchar\numexpr"6000+`:\relax\,}
+% A TikZ style for curved arrows of a fixed height, due to AndréC.
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+% TikZ arrowhead/tail styles.
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+% TikZ arrow styles.
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+%%%%%%%%%%
+
+%% DEFINIZIONI COMANDI MATEMATICI
+\DeclareMathOperator{\epi}{Epi}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\graph}{graph}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\spettro}{Spettro}
+\DeclareMathOperator{\nulls}{nullspace}
+\DeclareMathOperator{\dom}{dom}
+\let\det\relax %TOGLIE LA DEFINIZIONE SU "\det"
+\DeclareMathOperator{\det}{det}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\gl}{GL}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\I}{\mathds{1}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\tc}{t.c.}
+\DeclareMathOperator{\ar}{ar}
+\DeclareMathOperator{\const}{Const}
+\DeclareMathOperator{\fun}{Fun}
+\DeclareMathOperator{\rel}{Rel}
+\DeclareMathOperator{\altezza}{ht}
+\DeclareMathOperator{\T}{T}
+
+\newcommand{\R}{\mathds{R}}
+\newcommand{\K}{\mathds{K}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\rmn}{\R^{m,n}}
+\renewcommand{\tilde}[1]{\widetilde{#1}}
+%tramite i prossimi due comandi posso decidere come scrivere i logaritmi naturali in tutti i documenti: ho infatti eliminato qualsiasi differenza tra "ln" e "log": se si vuole qualcosa di diverso bisogna inserire manualmente il tutto
+\let\ln\relax
+\DeclareMathOperator{\ln}{log}
+\let\log\relax
+\DeclareMathOperator{\log}{log}
+%%%%%%
+
+%% NUOVI COMANDI
+\newcommand{\straniero}[1]{\textit{#1}} %parole straniere
+\newcommand{\titolo}[1]{\textsc{#1}} %titoli
+\newcommand{\qedd}{\tag*{$\square$}} %qed per ambienti matemastici
+\newcommand{\ooverline}[1]{\overline{\overline{#1}}}
+\newcommand{\circoletto}[1]{\left(#1\right)^\text{o}}
+%
+\newcommand{\qmatrice}[1]{\begin{pmatrix}
+#1_{11} & \cdots & #1_{1n}\\
+\vdots & \ddots & \vdots \\
+#1_{m1} & \cdots & #1_{mn}
+\end{pmatrix}}
+%
+\newcommand{\parentesi}[2]{%
+\underset{#1}{\underbrace{#2}}%
+}
+%
+\newcommand{\norma}[1]{% Norma 
+\left\lVert#1\right\rVert%
+}
+\newcommand{\scalare}[2]{% Scalare
+\langle #1, #2\rangle
+}
+%%%%%
+
+%% DEFINIZIONE NUMERAZIONE EQUAZIONI
+\renewcommand{\theequation}{\arabic{equation}}
+%%%%%%%%%%%%%%%%%
+
+%% ENUMERATE romani
+\usepackage{enumitem} %numeri romani come enumerate
+\newenvironment{romanen}{\begin{enumerate}[label={\itshape\roman{*}}., ref=(\roman{*})]}{\end{enumerate}}
+%%%%%
+
+%% RIFERIMENTI A FINE DOC
+\newarray\Riferimentiname
+\newarray\Riferimentipoint
+\newcounter{Riferimentinum}
+\newcommand{\riferimento}[2]{\stepcounter{Riferimentinum}% Questo comando aggiunge alla lista dei riferimenti un elemento (uno al nome e uno alla descrizione): deve essere usato in ogni teorema/enunciato che faccia riferimento a qualcosa nel testo.
+\Riferimentiname(\theRiferimentinum)={#1}% 
+\Riferimentipoint(\theRiferimentinum)={#2}
+}
+\newcounter{variabile}
+\newcommand{\stampairiferimenti}{%Questo comando va lanciato alla fine, e stampa tutti i riferimenti necessari
+	\setcounter{variabile}{0}
+	\cleardoublepage
+	\stepcounter{capitoloeccolo}\section*{Riferimenti in bibliografia}
+	\begin{itemize}
+		\whiledo{\thevariabile < \theRiferimentinum}{\stepcounter{variabile}\item \textbf{\Riferimentiname(\thevariabile):} \Riferimentipoint(\thevariabile).}
+	\end{itemize}
+}
+%%%%%
+
+%% RESTRIZIONI
+\newcommand{\referenze}[2]{
+	\phantomsection{}#2\textsuperscript{\textcolor{blue}{\textbf{#1}}}
+}
+\def\restriction#1#2{\mathchoice
+              {\setbox1\hbox{${\displaystyle #1}_{\scriptstyle #2}$}
+              \restrictionaux{#1}{#2}}
+              {\setbox1\hbox{${\textstyle #1}_{\scriptstyle #2}$}
+              \restrictionaux{#1}{#2}}
+              {\setbox1\hbox{${\scriptstyle #1}_{\scriptscriptstyle #2}$}
+              \restrictionaux{#1}{#2}}
+              {\setbox1\hbox{${\scriptscriptstyle #1}_{\scriptscriptstyle #2}$}
+              \restrictionaux{#1}{#2}}}
+\def\restrictionaux#1#2{{#1\,\smash{\vrule height .8\ht1 depth .85\dp1}}_{\,#2}} 
+%%%%%%%%%%%
+
+%% SEZIONE GRAFICA
+\usepackage{tikz}
+\usetikzlibrary{matrix, patterns, calc, decorations.pathreplacing, hobby, decorations.markings, decorations.pathmorphing, babel}
+\usepackage{tikz-3dplot}
+\usepackage{mathrsfs} %per geogebra
+\usepackage{tikz-cd}
+\tikzset
+{
+  %surface/.style={fill=black!10, shading=ball,fill opacity=0.4},
+  plane/.style={black,pattern=north east lines},
+  curve/.style={black,line width=0.5mm},
+  dritto/.style={decoration={markings,mark=at position 0.5 with {\arrow{Stealth}}}, postaction=decorate},
+  rovescio/.style={decoration={markings,mark=at position 0.5 with {\arrow{Stealth[reversed]}}}, postaction=decorate}
+}
+\usepackage{pgfplots} % stampare le funzioni
+	\pgfplotsset{/pgf/number format/use comma,compat=1.15}
+	%\pgfplotsset{compat=1.15} %per geogebra
+	\usepgfplotslibrary{fillbetween, polar}
+%%%%%%
+
+%% NOTE A PIÉ PAGINA
+\usepackage[hang, perpage, symbol*, stable, bottom]{footmisc} %per le note a pié pagina
+\footnotemargin=0.8em
+\DefineFNsymbolsTM{myfnsymbols}{% def. from footmisc.sty "bringhurst" symbols
+  \textdagger    \dagger
+  \textdaggerdbl \ddagger
+  \textsection   \mathsection
+  \textbardbl    \|%
+  \textparagraph \mathparagraph
+  \textdagger\textdagger \dagger\dagger
+  \textdaggerdbl\textdaggerdbl \ddagger\ddagger
+  \textsection\textsection \mathsection\mathsection
+  \textparagraph\textparagraph \mathparagraph\mathparagraph
+}%
+\setfnsymbol{myfnsymbols}
+%comandi per footnotemark consecutivi
+	\newcommand{\footnotemarkk}[1]{%
+		\hyperref[#1]{\begin{NoHyper}
+			\footnotemark
+		\end{NoHyper}}}
+	\newcommand{\consecfoottext}[3]{
+		\addtocounter{footnote}{-#1}
+		\footnotetext{#3\label{#2}}
+		\addtocounter{footnote}{#1}
+	}
+
+	%esempio:
+	% \mathscr{B}=\{\underset{\footnotemarkk{e1}}{\underbrace{v_1, \cdots, v_{k_1}}}, \underset{\footnotemarkk{e2}}{\underbrace{v_{k_1+1} , \cdots, v_{k_2+k_1}}}, \cdots, \underset{\footnotemark}{\underbrace{v_{k_{l-1}+kl }}}\}
+	% \]
+	% \consecfoottext{2}{e1}{autovettori rispetto a $ \lambda_1 $}
+	% \consecfoottext{1}{e2}{autovettori rispetto a $ \lambda_2 $}
+	% \footnotetext{autovettore rispetto a $ \lambda_{l}  $}
+	% \todo{Manca matrice}
+%%%%%%
+
+%% CITAZIONI
+\usepackage{lineno}
+
+\newcommand{\citazione}[1]{%
+  \begin{quotation}
+  \begin{linenumbers}
+  \modulolinenumbers[5]
+  \begingroup
+  \setlength{\parindent}{0cm}
+  \noindent #1
+  \endgroup
+  \end{linenumbers}
+  \end{quotation}\setcounter{linenumber}{1}
+  }
+%%%%%%
+
+%% HEADER E FOOTER
+%% HEAD and FOOT
+\newcommand{\datainizion}{testo}
+\newcommand{\hdrnew}[1]{
+	\fancyhead{} % cancella tutti i campi
+	\fancyfoot{}
+	\fancyhead[RO,LE]{\datainizion}
+	\fancyhead[RE]{#1}
+	\fancyhead[LO]{\nouppercase{\leftmark}}
+	% \fancyfoot[LE,RO]{\thepage}
+	\fancyfoot[C]{\thepage}
+	% \fancyfoot[CO,RE]{Per: Dean A. Smith}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\pagestyle{fancy}
+}
+\newcommand{\days}[1]{\marginnote{$\spadesuit$}\renewcommand{\datainizion}{#1}}
+%%%%%%%%
+% rimuovere header e footer dalle pagine vuote
+\usepackage{ifthen}
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \vspace*{\fill}
+    \vspace{\fill}
+    \thispagestyle{empty}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+%%%%%%
+
+%% EQUAZIONI RIQUADRATE
+% \equazione{arg1} crea una equazione con riquadro colorato
+
+\usepackage[intlimits]{empheq}
+\usepackage{tcolorbox}
+\usepackage{ifthen}
+
+	\newif\ifmarg
+	\margtrue
+	\ifmarg
+	\makeatletter
+	\let\mytagform@=\tagform@
+	\def\tagform@#1{\maketag@@@{\mbox{~}\hbox{\rlap{\hspace{0.5in}(\ignorespaces#1\unskip\@@italiccorr)}}}\kern1sp}
+	\renewcommand{\eqref}[1]{{\mytagform@{\ref{#1}}}}
+	\makeatother
+	\fi
+	
+	\newcommand*\mygraybox[0]{%
+		\tcbhighmath}
+		
+	\newcommand{\equazione}[1]{	\begin{empheq}[box=\mygraybox]{equation*}
+			#1
+		\end{empheq}}
+%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{%
+	pdfauthor={Davide Peccioli},
+	pdfsubject={Appunti UniTO},
+	allcolors=black,
+	citecolor=black,
+	colorlinks=true, 
+	bookmarksopen=true}
+
+%% AMBIENTE DI BASE, PER DEFINIRE TUTTI GLI ALTRI
+\newcounter{totale}[section]
+\newcounter{capitoloeccolo}
+\setcounter{capitoloeccolo}{0}
+\newcommand{\frammento}[4]{\stepcounter{totale} 
+% #1 TITOLO
+% #2 RIFERIMENTO A BIBLIOGRAFIA
+% #3 CONTENUTO
+% #4 STRINGA UNIVOCA
+	\ifx&#4&%
+		% #4 is empty
+		\else%
+		\newcounter{frammentoA#4}\addtocounter{frammentoA#4}{\thecapitoloeccolo}
+		\newcounter{frammentoB#4}\addtocounter{frammentoB#4}{\thetotale}
+		\label{totale#4}% #4 is nonempty {\arabic{frammentoA#4}.\arabic{frammentoB#4}}
+	\fi
+	\ifx&#1&%
+		\paragraph{({\thetotale})} #3% #1 is empty
+		\ifx&#2&%
+			% #2 is empty
+			\else%
+			\riferimento{\hyperref[totale#4]{({\thetotale})}}{#2}% #2 is nonempty
+			\fi
+		\else%
+		% #1 nonempty
+		\paragraph{#1. ({\thetotale})} #3
+		\ifx&#2&%
+			% #2 is empty
+			\else%
+			\riferimento{\hyperref[totale#4]{#1. ({\arabic{frammentoA#4}.\arabic{frammentoB#4}})}}{#2}% #2 is nonempty
+		\fi	
+	\fi
+}
+\newcounter{numeroappendice}
+\newcounter{appendixever}
+\setcounter{appendixever}{0}
+\newcommand{\dimframmento}[2]{
+	\ifthenelse{\theappendixever = 0}{%
+	\paragraph{\hyperref[totale#1]{\textit{Dimostrazione. (\arabic{frammentoB#1})}}} #2}{%
+	\paragraph{\hyperref[totale#1]{\textit{Dimostrazione. (\arabic{frammentoB#1})}}} #2
+	}
+}
+\newcommand{\solframmento}[2]{
+	\ifthenelse{\theappendixever = 0}{%
+	\paragraph{\hyperref[totale#1]{\textit{Soluzione. (\arabic{frammentoB#1})}}} #2}{%
+	\paragraph{\hyperref[totale#1]{\textit{Soluzione. (\arabic{frammentoB#1})}}} #2
+	}
+}
+\newcommand{\frag}[2][]{%Comando per inserire un frammento sparso, senza fronzoli, solo contenuto ed eventuale titolo
+	\frammento{}{}{#2}{#1}
+}
+\newcommand{\definizionegenerale}[4]{
+	\paragrafo{#1}{{\itshape#2}}{#3}{#4}
+}
+\newcommand{\framref}[1]{%
+	$\bigstar$\footnote{Vedi sotto}
+}
+%%%%%%%%%%%%%%%%%%%
+
+%%%% UMANIZZAZIONE FRAMMENTO
+
+\newcommand{\paragrafo}[4]{\frammento{#1}{#4}{#2}{#3}}
+
+%-------------------------------------------------------
+
+%% AMBIENTI PER APPUNTI (DA FRAMMENTO)
+
+\newcommand{\esempi}[2][]{
+	\frammento{Esempi}{#1}{#2}{}
+}
+\newcommand{\esempio}[2][]{
+	\frammento{Esempio}{#1}{#2}{}
+}
+\newcommand{\proprieta}[2][]{
+	\frammento{Proprietà}{#1}{#2}{}
+}
+\newcommand{\notazione}[2][]{
+	\frammento{Notazione}{#1}{#2}{}
+}
+\newcommand{\osservazione}[2][]{
+	\frammento{Osservazione}{#1}{#2}{}
+}
+\newcommand{\nota}[1]{
+	\frammento{Nota}{#1}{}{}
+}
+\newcommand{\proposizione}[3][]{
+	\frammento{Proposizione}{#1}{#3}{#2}
+    % \stepcounter{proposizione}
+	% 	\newcounter{prp#2}\addtocounter{prp#2}{\theproposizione}
+	% 	\paragraph{Proposizione
+	% 		\textit{p.}\roman{proposizione} \label{prp:#2} #1} 
+	% 		{\itshape#3}
+}
+\newcommand{\dimostrazioneprop}[2]{
+	\dimframmento{#1}{#2}
+	% \paragraph{\textit{dim.} \hyperref[prp:#1]{(\textit{p.}\roman{prp#1})}} #2
+}
+
+\newcommand{\lemma}[3][]{
+	\frammento{Lemma}{#1}{#3}{#2}
+    % \stepcounter{lemma}
+	% 	\newcounter{lmm#2}\addtocounter{lmm#2}{\thelemma}
+	% 	\paragraph{Lemma
+	% 		\textit{l.}\roman{lemma} \label{lmm:#2} #1} 
+	% 		#3
+}
+\newcommand{\dimostrazionelem}[2]{
+	\dimframmento{#1}{#2}
+	% \paragraph{\textit{dim.} \hyperref[lmm:#1]{(\textit{l.}\roman{lmm#1})}} #2
+}
+
+\newcommand{\corollario}[3][]{
+    \frammento{Corollario}{#1}{#3}{#2}
+	% \stepcounter{corollario}
+	% 	\newcounter{crl#2}\addtocounter{crl#2}{\thecorollario}
+	% 	\paragraph{Corollario\label{crl:#2} #1} 
+	% 	#3
+}
+\newcommand{\dimostrazionecrl}[2]{
+	\dimframmento{#1}{#2}
+	% \paragraph{\hyperref[crl:#1]{\textit{dim.} }} #2
+}
+
+%----------------------------------------------------
+
+%%% ESERCIZI
+
+\newcommand{\esercizio}[2]{
+	\paragrafo{Esercizio}{%
+		#1 %Contenuto del paragrafo 
+	}{}{}
+	\paragraph{\textit{Soluzione ({\thetotale}).}} #2
+}
+\newcommand{\sesercizio}[1]{
+	\paragrafo{Esercizio}{%
+		#1 %Contenuto del paragrafo 
+	}{}{}
+}
+
+%%%%%%
+
+%%%% TEOREMI E DEFINIZIONI
+
+\newcounter{teorema}
+\newcommand{\teorema}[3][]{
+	\rteorema[#1]{#2}{#3}{}
+}
+\newcommand{\rteorema}[4][]{
+	\stepcounter{teorema}
+		\newcounter{thm#2}\addtocounter{thm#2}{\theteorema}
+		\begin{tcolorbox}[parbox=false, colback=white,colframe=white!20!black,title=Teorema \Roman{teorema}. \label{thm:#2}, sharpish corners]
+		%\ifthenelse{\isundefined{#1}}{\subsection*{#1}{\itshape#3}}{{\itshape#3}}
+		\ifx&#1&%
+		#3% #1 is empty
+		\else%
+		\subsection*{#1}#3% #1 is nonempty
+		\fi
+		%\subsection*{#1}{\itshape#3}
+		\end{tcolorbox}
+		\ifx&#4&%
+		\else%
+		\riferimento{\hyperref[thm:#2]{Teorema \Roman{thm#2}}}{#4}% #4 is nonempty
+		\fi
+		
+}
+\newcommand{\dimostrazione}[2]{\paragraph{\textit{\hyperref[thm:#1]{Dimostrazione \Roman{thm#1}.}}} #2}
+\newcommand{\teoref}[1]{$\bigstar$\footnote{Vedi sotto}}
+\newcommand{\definizione}[1]{
+	% \paragraph{Definizione #1} {\itshape#2}
+	\definizionegenerale{Definizione}{#1}{}{}
+}
+
+
+
+%%%%
+
+
+\newcommand{\attenzione}[1]{
+	\paragrafo{Attenzione}{%
+		#1 %Contenuto del paragrafo 
+	}{}{}
+}
+
+\newcommand{\conseguenza}[1]{
+	\paragrafo{Conseguenza}{%
+		#1 %Contenuto del paragrafo 
+	}{}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FINE AMBIENTI APPUNTI
+
+%TOdOS e Excursus
+%%
+%\usepackage{tcolorbox}
+%\tcbuselibrary{breakable}
+%\newcommand{\todo}[1]{%
+%\begin{tcolorbox}[colframe=red, colback=white]
+%	\centering
+%	#1
+%\end{tcolorbox}
+%}
+%Ambiente EXCURSUS
+%\newenvironment{excursus}[1]%
+%{	
+%	\begin{figure}
+%	\begin{tcolorbox}[colback=white!90!black,colframe=white!90!black]
+%	\subsection*{#1}
+%}%
+%{%
+%	\end{tcolorbox}\end{figure}
+%}
+%%%%%%%%
+
+%%%%%% GEOMETRY SEMPRE PER ULTIMO
+
+%\usepackage[% 
+%textwidth=360pt,textheight=595pt]{geometry}
+% \geometry{papersize={16.99cm,24.4cm}, bottom=3cm,%
+% heightrounded}
+
