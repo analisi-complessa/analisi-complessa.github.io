@@ -25,7 +25,7 @@ with open(file_to_open, 'r') as file:
 for row in rows:
     if row == "%%% Lezione\n":
         lezione += 1
-        print(lezione)
+        scheda = 0
     else:
         if row[0] == "%":
             if row[1] == "%":
@@ -72,7 +72,7 @@ for row in rows:
 
 for x in my_files:
     os.system("pdflatex -output-directory=pdf " + x + ".tex")
-    os.system("pdflatex -output-directory=pdf " + x + ".tex")
+    # os.system("pdflatex -output-directory=pdf " + x + ".tex")
 for x in my_files:
     os.system("convert -density 300 pdf/" + x + ".pdf png/" + x + ".png")
 

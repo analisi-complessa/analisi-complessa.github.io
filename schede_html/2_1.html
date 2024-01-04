@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- DOMANDA FALSA -->
 <html lang="it">
 
 <head>
@@ -158,33 +159,25 @@
         <h1>Scheda 1</h1>
     </header>
     <main>
-        <img src="immagine1.png" alt="Immagine 1" width="300">
+        <img src="../schede_png/png/2_1_F.png" alt="Immagine 1" width="300">
         <br>
         <!-- Risposte multiple -->
         <div class="answers-container">
-            <div class="answer-box" onclick="selectAnswer('A')">A</div>
-            <div class="answer-box" onclick="selectAnswer('B')">B</div>
-            <div class="answer-box" onclick="selectAnswer('C')">C</div>
-            <div class="answer-box" onclick="selectAnswer('D')">D</div>
+            <div class="answer-box" onclick="sbagliato()">Vero</div>
+            <div class="answer-box" onclick="giusto()">Falso</div>
         </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
-            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <!-- Risposta -->
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
-                </p>
+                <img src="../schede_png/png/2_1_r.png" alt="Immagine 1" width="300">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
-                    <button onclick="redo()">Non ho capito</button>
                     <button onclick="goForward()">Vai Avanti</button>
                 </div>
             </div>
@@ -192,7 +185,7 @@
     </main>
 
     <script>
-        function openPopup() {
+        function sbagliato() {
             document.getElementById("popupOverlay").style.display = "flex";
         }
 
@@ -201,23 +194,18 @@
         }
 
         function exit() {
-            window.location.href = 'index.html';
-        }
-
-        function redo() {
-            // Aggiungi qui l'azione desiderata per "Vai Avanti"
-            alert("Azione per 'Non ho capito'");
+            window.location.href = '../index.html';
         }
 
         function goForward() {
             // Aggiungi qui l'azione desiderata per "Vai Avanti"
-            alert("Azione per 'Vai Avanti'");
+            window.location.href = '../end.html';
         }
 
         // Funzione per gestire la selezione di una risposta
-        function selectAnswer(answer) {
+        function giusto() {
             // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
-            alert("Hai selezionato la risposta " + answer);
+            alert("La tua risposta è quella giusta");
         }
     </script>
 </body>

@@ -98,41 +98,61 @@
     </header>
     <main>
         <div class="button-container">
-            <button onclick="redirecttohtml()">Lezione 1
+            <button onclick="lezione1()">Lezione 1
                 <div class="progress-bar" style="width: 50%;"></div>
                 <span class="percentage">50%</span>
             </button>
-            <button>Lezione 2
+            <button onclick="lezione1()">Lezione 2
                 <div class="progress-bar" style="width: 75%;"></div>
                 <span class="percentage">75%</span>
             </button>
         </div>
-        <div class="button-container">
-            <button>Lezione 3
+        <!-- <div class="button-container">
+            <button onclick="lezione3()">Lezione 3
                 <div class="progress-bar" style="width: 30%;"></div>
                 <span class="percentage">30%</span>
             </button>
-            <button>Lezione 4
+            <button onclick="lezione4()">Lezione 4
                 <div class="progress-bar" style="width: 90%;"></div>
                 <span class="percentage">90%</span>
             </button>
         </div>
         <div class="button-container">
-            <button>Lezione 5
+            <button onclick="lezione5()">Lezione 5
                 <div class="progress-bar" style="width: 20%;"></div>
                 <span class="percentage">20%</span>
             </button>
-            <button>Lezione 6
+            <button onclick="lezione6()">Lezione 6
                 <div class="progress-bar" style="width: 60%;"></div>
                 <span class="percentage">60%</span>
             </button>
-        </div>
+        </div> -->
     </main>
     
     <script>
-        function redirecttohtml() {
+        function lezione1() {
             // alert( localStorage.getItem('test') );
-            window.location.href = 'scheda_domande.html';
+            window.location.href = 'schede_html/1_1.html';
+        }
+        function lezione2() {
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'schede_html/2_1.html';
+        }
+        function lezione3() {
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'schede_html/3_1.html';
+        }
+        function lezione4() {
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'schede_html/4_1.html';
+        }
+        function lezione5() {
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'schede_html/5_1.html';
+        }
+        function lezione6() {
+            // alert( localStorage.getItem('test') );
+            window.location.href = 'schede_html/6_1.html';
         }
     </script>
 </body>
