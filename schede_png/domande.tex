@@ -1,20 +1,138 @@
 %%% Lezione
+%%% Funzioni olomorfe
 %% SCHEDA V
-\lipsum[1]
+    Sia $f : \C \longrightarrow \C$ olomorfa, allora la sua restrizione su $\R$, ovvero $\restriction{f}{\R} : \R \longrightarrow \R$ è una funzione derivabile.
 %% END
 %% RISP
-\lipsum
+    Si può considerare $f = u(x,y) + i\, v(x,y)$, la restrizione di $f$ all'asse reale diventa $f = u(x,y)$, ma se richiediamo che anche il dominio sia solo l'asse reale, dobbiamo considerare $(x,y) = (x,0)$, da ciò si ha
+    $\restriction{f}{\R} = u(x,0)$. 
+    
+    Poiché $f$ è olomorfa, $u$ è una funzione differenziabile, quindi $u(x,0)$ è derivabile e la sua derivata è 
+    $f_{| \mathbb{R}}'(x) = \lim_{h \to 0} \frac{u(x+h) - u(x,0)}{h} = \frac{\partial u}{\partial x}(x,0)$
+%% END
+%% SCHEDA F
+Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differenziale $f(z) \dif z$ sia esatta.
+%% END
+%% RISP
+    L'affermazione è falsa, poiché si richiede solo che la forma sia chiusa.
 %% END
 %% SCHEDA M
-\lipsum[1]
+    In riferimento alla dimostrazione del teorema di analiticità delle funzioni olomorfe, quale delle affermazioni non è vera?
+
+    Si sceglie la circonferenza $\gamma_z$, di raggio $r > |z - z_0|$: \begin{enumerate}
+        \item[(A)] Per avere indice di $\gamma_z$ in $Z$ pari ad 1
+        \item[(B)] Per poter lavorare con una serie geometrica, essendo $ \frac{|z_0 - z|}{r} < 1$
+        \item[(C)] Per consentire lo scambio della serie con l'integrale, essendo $ \frac{|z_0 - z|}{r} < 1$
+        \item[(D)] Per poter applicare il teorema di Cauchy sui convessi, essendo $D(z_0 ; r)$ convesso
+    \end{enumerate}
 %% END
 %% RISP
-\lipsum
+    La risposta corretta è (D).
 %% END
-%%% Lezione
 %% SCHEDA F
-\lipsum[1]
+    Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa tali che \[
+        f(z) = g(z)(z-a)^m
+    \]
 %% END
 %% RISP
-\lipsum
+    È falso, perché $ g $ non deve annullarsi in $ a $.
+%% END
+%% SCHEDA F
+    Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa con $ g(a)\neq 0 $ tali che \[
+        f(z) = g(z)(z-a)^m
+    \]
+%% END
+%% RISP
+    Non è detto che valga su tutto il dominio della funzione: è una proprietà locale. 
+%% END
+%% SCHEDA V
+    Ogni funzione complessa polinomiale $f$ di grado $d$ ammette un punto $w$ per cui esiste un intero $k \le  d$ tale che \[
+        f^{(j)}(w) = 0, \quad \forall j < k
+    \]
+%% END
+%% RISP
+    È vero: infatti dal teorema fondamentale dell'algebra $f$ ammette esattamente $d$ zeri. Sia, quindi, $w$ uno zero di $f$. Dal teorema degli zeri per funzioni olomorfe, sappiamo che $w$ avrà ordine $k$, dove si ha che $k$ è l'ordine della prima derivata di $f$ che non si annulla in $w$.
+%% END
+%% SCHEDA V
+    Non esistono, in campo complesso, funzioni che siano analitiche e non olomorfe
+%% END
+%% RISP
+    L'affermazione è vera: infatti a lezione è stato dimostrato che, se $ \Omega \subseteq \C $ è una regione (ovvero un aperto connesso), vale l'uguaglianza \[
+        \mathcal{A}(\Omega) = H(\Omega)
+    \]
+%% END
+%% SCHEDA F
+    Sia $\Omega$ una regione tale che se $z \in \Omega$, allora $\bar{z} \in \Omega$, e sia $f \in \mathcal{H}(\Omega)$.
+    
+    Allora $f(\bar{z}) \in \mathcal{H}(\Omega)$
+%% END
+%% RISP
+    L'affermazione è falsa: un controesempio immediato è fornito dalla funzione $ f=\Id_{\C} $, che è olomorfa, mentre $ f(\bar(z))=\bar{z} $ \emph{non è} olomorfa su $ \C $.
+%% END
+%% SCHEDA F
+    In riferimento alla dimostrazione del teorema di Cauchy sui convessi, si poteva direttamente concludere che, essendo $f(z)\dif z$ chiusa (per le equazioni di Cauchy-Riemann), una forma chiusa su un convesso è anche esatta, e dunque l'integrale è nullo.
+%% END
+%% RISP
+    L'affermazione è falsa, perché le derivate parziali esistono di $u, v$, ma a priori non sappiamo se siano o meno continue.
+%% END
+%% SCHEDA M
+    La disuguaglianza $|e^{z^2}| \leq e^{|z|^2}$.
+    \begin{itemize}
+        \item[(A)] È sempre valida
+        \item[(B)] Vale solo se ci restringiamo all'asse reale
+        \item[(C)] Dipende dal valore della parte reale di $z$
+        \item[(D)] Dipende dal valore della parte immaginaria di $z$
+        \item[(E)] È sempre falsa
+    \end{itemize}
+%% END
+%% RISP
+    La risposta corretta è la $ (A) $.
+%% END
+%% SCHEDA F
+    Esistono funzioni olomorfe che valgono costantemente zero sull'asse immaginario.
+%% END
+%% RISP
+    È falso: infatti gli zeri di funzioni olomorfe sono sempre isolati, inoltre l'insieme degli zeri di una funzione olomorfa è al più numerabile.
+%% END
+%% SCHEDA M
+    Una funzione olomorfa e illimitata in ogni intorno di un punto può appettere quel punto come discontinuità eliminabile: \begin{itemize}
+        \item[(A)] sempre; 
+        \item[(B)] mai; 
+        \item[(C)] dipende dall'espressione della funzione
+    \end{itemize}
+%% END
+%% RISP
+    La risposta giusta è la $ (B) $, poiché se la discontinuità è eliminabile allora la funzione deve essere limitata in un intorno. 
+%% END
+%% SCHEDA M
+    Sia $f$ una funzione olomorfa e sia $a$ un suo polo. Allora, detta $Q$ la parte principale di $f$ in $a$, e presa $\gamma$ una qualsiasi curva chiusa il cui supporto non contenga $a$, allora $\int_{\gamma} Q(z) \dif z$ è pari a \begin{itemize}
+        \item[(A)] Dipende dalla parametrizzazione di $\gamma$;
+        \item[(B)] $2\pi i \operatorname{Ind}_{\gamma}(a) \operatorname{Res}(f,a)$
+        \item[(C)] $2\pi i \operatorname{Res}(f,a)$
+        \item[(D)] $2\pi i \operatorname{Ind}_{\gamma}(a)$
+    \end{itemize}
+%% END
+%% RISP
+    La risposta corretta è la $(B)$ e si rimanda alla dimostrazione del teorema dei residui
+%% END
+
+%%% Lezione
+%%% Integrali
+%% SCHEDA M
+    Risolvere il seguente integrale \[\int_0^{2 \pi} \frac{\cos(2\theta)}{2 - \cos(\theta)}\dif \theta\]
+%% END
+%% RISP
+    La soluzione è \[
+        \frac{2 \pi}{3}(7 \sqrt{3} -12 )
+    \]Per trovarla si utilizza la sostituzione $z = e^{i \theta}$, da cui si ricava
+    \begin{align*}
+        \cos(\theta) &= \frac{z + z^-1}{2} = \frac{z^2+1}{2z}\\
+        \cos(2\theta) &= \frac{z^4+1}{2z^2}
+    \end{align*}
+
+    Si integra dunque sulla circonferenza di centro origine e raggio 1 (percorsa una volta in senso antiorario), da cui si ottiene
+
+        $\int_0^{2 \pi} \frac{\cos(2\theta)}{2 - \cos(\theta)}\dif \theta = i \int_{|z| = 1} \frac{z^4+1}{z^2(z^2-4z+1)} \dif z = 2 \pi i \left[ \operatorname{Res}(f,0) + \operatorname{Res}(f,2-\sqrt{3}) \right]$
+
+    Dove $\operatorname{Res}(f,0) = 4i$ e $ \operatorname{Res}(f,2-\sqrt{3}) = -\frac{7}{\sqrt{3}}i $
 %% END

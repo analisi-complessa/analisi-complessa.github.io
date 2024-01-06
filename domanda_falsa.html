@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheda 1</title>
+    <title>Analisi Complessa</title>
     <style>
         /* Font: Computer Modern */
         @font-face {
@@ -137,29 +137,28 @@
 
         /* Aggiunto stile per pulsanti nel popup */
         .popup-buttons {
-            display: flex;
             justify-content: space-between;
             align-items: center;
             position: absolute;
-            left: 0px;
+            left: 0;
             bottom: 0;
             width: 100%;
-            padding: 0px;
+            padding: 0;
             padding-bottom: 18px;
         }
 
         .popup-buttons button {
-            margin: 0 10px;
+            margin: 0 20px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Scheda 1</h1>
+        <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="%%QUESTION" alt="Immagine 1" width="300">
+        <img src="%%QUESTION" alt="Immagine 1" width="100%">
         <br>
         <!-- Risposte multiple -->
         <div class="answers-container">
@@ -174,7 +173,7 @@
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="%%ANSWER" alt="Immagine 1" width="300">
+                <img src="%%ANSWER" alt="Immagine 1" width="100%">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
@@ -206,6 +205,7 @@
         function giusto() {
             // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
             alert("La tua risposta è quella giusta");
+            goForward();
         }
     </script>
 </body>

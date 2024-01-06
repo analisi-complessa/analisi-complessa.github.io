@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- DOMANDA VERA -->
+<!-- DOMANDA FALSA -->
 <html lang="it">
 
 <head>
@@ -158,12 +158,12 @@
         <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="%%QUESTION" alt="Immagine 1" width="100%">
+        <img src="../schede_png/png/1_4_F.png" alt="Immagine 1" width="100%">
         <br>
         <!-- Risposte multiple -->
         <div class="answers-container">
-            <div class="answer-box" onclick="giusto()">Vero</div>
-            <div class="answer-box" onclick="sbagliato()">Falso</div>
+            <div class="answer-box" onclick="sbagliato()">Vero</div>
+            <div class="answer-box" onclick="giusto()">Falso</div>
         </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
@@ -173,7 +173,7 @@
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="%%ANSWER" alt="Immagine 1" width="100%">
+                <img src="../schede_png/png/1_4_r.png" alt="Immagine 1" width="100%">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
@@ -198,7 +198,7 @@
 
         function goForward() {
             // Aggiungi qui l'azione desiderata per "Vai Avanti"
-            window.location.href = '%%NEXT_QUESTION';
+            window.location.href = '1_5.html';
         }
 
         // Funzione per gestire la selezione di una risposta

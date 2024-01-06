@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- DOMANDA FALSA -->
+<!-- DOMANDA MULTIPLA -->
 <html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheda 1</title>
+    <title>Analisi Complessa</title>
     <style>
         /* Font: Computer Modern */
         @font-face {
@@ -136,7 +136,7 @@
         }
 
         /* Aggiunto stile per pulsanti nel popup */
-        .popup-buttons {
+        /* .popup-buttons {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -146,38 +146,46 @@
             width: 100%;
             padding: 0px;
             padding-bottom: 18px;
+        } */
+        .popup-buttons {
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            padding-bottom: 18px;
         }
 
         .popup-buttons button {
-            margin: 0 10px;
+            margin: 0 20px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Scheda 1</h1>
+        <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="../schede_png/png/2_1_F.png" alt="Immagine 1" width="300">
+        <img src="../schede_png/png/2_1_M.png" alt="Immagine 1" width="100%">
         <br>
-        <!-- Risposte multiple -->
-        <div class="answers-container">
-            <div class="answer-box" onclick="sbagliato()">Vero</div>
-            <div class="answer-box" onclick="giusto()">Falso</div>
-        </div>
+
         <div class="button-container">
             <button onclick="exit()">Esci</button>
+            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <!-- Risposta -->
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="../schede_png/png/2_1_r.png" alt="Immagine 1" width="300">
+                <img src="../schede_png/png/2_1_r.png" alt="Immagine 1" width="100%">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
+                    <button onclick="exit()">Esci</button>
                     <button onclick="goForward()">Vai Avanti</button>
                 </div>
             </div>
@@ -185,7 +193,7 @@
     </main>
 
     <script>
-        function sbagliato() {
+        function openPopup() {
             document.getElementById("popupOverlay").style.display = "flex";
         }
 
@@ -202,11 +210,6 @@
             window.location.href = '../end.html';
         }
 
-        // Funzione per gestire la selezione di una risposta
-        function giusto() {
-            // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
-            alert("La tua risposta è quella giusta");
-        }
     </script>
 </body>
 

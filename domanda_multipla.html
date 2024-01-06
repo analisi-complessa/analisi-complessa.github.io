@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheda 1</title>
+    <title>Analisi Complessa</title>
     <style>
         /* Font: Computer Modern */
         @font-face {
@@ -136,7 +136,7 @@
         }
 
         /* Aggiunto stile per pulsanti nel popup */
-        .popup-buttons {
+        /* .popup-buttons {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -146,20 +146,30 @@
             width: 100%;
             padding: 0px;
             padding-bottom: 18px;
+        } */
+        .popup-buttons {
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            padding-bottom: 18px;
         }
 
         .popup-buttons button {
-            margin: 0 10px;
+            margin: 0 20px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Scheda 1</h1>
+        <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="%%QUESTION" alt="Immagine 1" width="300">
+        <img src="%%QUESTION" alt="Immagine 1" width="100%">
         <br>
 
         <div class="button-container">
@@ -171,7 +181,7 @@
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="%%ANSWER" alt="Immagine 1" width="300">
+                <img src="%%ANSWER" alt="Immagine 1" width="100%">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
