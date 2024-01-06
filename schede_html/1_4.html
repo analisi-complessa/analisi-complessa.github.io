@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- DOMANDA FALSA -->
+<!-- DOMANDA MULTIPLA -->
 <html lang="it">
 
 <head>
@@ -138,6 +138,17 @@
         }
 
         /* Aggiunto stile per pulsanti nel popup */
+        /* .popup-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+            width: 100%;
+            padding: 0px;
+            padding-bottom: 18px;
+        } */
         .popup-buttons {
             justify-content: space-between;
             align-items: center;
@@ -160,15 +171,12 @@
         <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="../schede_png/png/1_4_F.png" alt="Immagine 1" width="100%"  style="max-width: 1100px;">
+        <img src="../schede_png/png/1_4_M.png" alt="Immagine 1" width="100%"  style="max-width: 1100px;">
         <br>
-        <!-- Risposte multiple -->
-        <div class="answers-container">
-            <div class="answer-box" onclick="sbagliato()">Vero</div>
-            <div class="answer-box" onclick="giusto()">Falso</div>
-        </div>
+
         <div class="button-container">
             <button onclick="exit()">Esci</button>
+            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <!-- Risposta -->
@@ -179,6 +187,7 @@
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
+                    <button onclick="exit()">Esci</button>
                     <button onclick="goForward()">Vai Avanti</button>
                 </div>
             </div>
@@ -186,7 +195,7 @@
     </main>
 
     <script>
-        function sbagliato() {
+        function openPopup() {
             document.getElementById("popupOverlay").style.display = "flex";
         }
 
@@ -203,12 +212,6 @@
             window.location.href = '1_5.html';
         }
 
-        // Funzione per gestire la selezione di una risposta
-        function giusto() {
-            // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
-            alert("La tua risposta è quella giusta");
-            goForward();
-        }
     </script>
 </body>
 

@@ -1,5 +1,61 @@
 %%% Lezione
+%% Preliminari di C
+%% SCHEDA F
+Le funzioni seno e coseno sono limitate in campo complesso.
+%% END
+%% RISP
+    In campo complesso non vale la limitazione che sussiste in campo reale: \begin{align*}
+        -1 &\le \sin x \le  1 & x&\in \R \\
+        -1 &\le \cos x \le 1 & x&\in \R 
+    \end{align*}e anzi, si dimostra che sono entrambe funzioni illimitate.
+%% END
+%% SCHEDA F
+In campo complesso vale l'uguaglianza: \[\log(z^2)=2\log(z) , \qquad  \forall z \in\C , z\neq0\]
+%% END
+%% RISP
+    Questa uguaglianza è vera soltanto per il ramo principale del logaritmo, e quindi l'affermazione è \emph{falsa}.
+%% END
+%% SCHEDA F
+    L'esponenziale complesso è una funzione invertibile su tutto $ \C $
+%% END
+%% RISP
+    È falso, poiché essendo periodico non è iniettivo, e quindi non è invertibile.
+%% END
+%% SCHEDA M
+    Il logaritmo naturale del numero $ 2+2\,i $ è \begin{itemize}
+        \item[(A)] $\log_{\R} (2\sqrt{2})+i(\pi/4+2k\pi)$, $ k \in \Z $, 
+        \item[(B)] $\log(8)+i(\pi/4+2k\pi)$, $ k \in \Z $, 
+        \item[(C)] $\log(8)+i(2\pi/3+2k\pi)$, $ k \in \Z $, 
+        \item[(D)]$\log(2\sqrt{2})+i\pi/4$, $ k \in \Z $.
+    \end{itemize}
+%% END
+%% RISP
+    La soluzione è \[
+        \log_{\R} (2\sqrt{2})+i(\pi/4+2k\pi),\qquad k \in \Z
+    \]
+%% END
+%% SCHEDA M
+    L'equazione \[
+        e^{z} = -1,\qquad z \in \C
+    \]quante soluzioni ha? \begin{itemize}
+        \item[(A)] ha una soluzione; 
+        \item[(B)] non ha soluzioni; 
+        \item[(C)] ha un'infinità numerabile di soluzioni; 
+        \item[(D)] ha un numero finito di soluzioni.
+    \end{itemize}
+%% END
+%% RISP
+    L'equazione ha un'infinità numerabile di soluzioni, quindi la risposta giusta è $(B)$. 
+%% END 
+
+%%% Lezione
 %%% Funzioni olomorfe
+%% SCHEDA V
+L'esponenziale complesso è una funzione periodica su $ \C $.
+%% END
+%% RISP
+    La risposta è: \emph{vero}; infatti, l'esponenziale complesso è una funzione periodica su $ \C $, con periodo $ 2\pi \,i $.
+%% END
 %% SCHEDA V
     Sia $f : \C \longrightarrow \C$ olomorfa, allora la sua restrizione su $\R$, ovvero $\restriction{f}{\R} : \R \longrightarrow \R$ è una funzione derivabile.
 %% END
@@ -70,6 +126,12 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     L'affermazione è falsa: un controesempio immediato è fornito dalla funzione $ f=\Id_{\C} $, che è olomorfa, mentre $ f(\bar(z))=\bar{z} $ \emph{non è} olomorfa su $ \C $.
 %% END
 %% SCHEDA F
+    Data una funzione $ f $ olomorfa su tutto $ \C $, allora la funzione $ \overline{f} $ (ovvero il complesso coniugato di $ f $) è olomorfa su tutto $ \C $.
+%% END
+%% RISP
+    L'affermazione è falsa. Un controesempio è la funzione $ f =\Id_{\C}  $, che è olomorfa, mentre $ \overline{f}(z)=\bar{z} $ \emph{non è} olomorfa su $ \C $.
+%% END
+%% SCHEDA F
     In riferimento alla dimostrazione del teorema di Cauchy sui convessi, si poteva direttamente concludere che, essendo $f(z)\dif z$ chiusa (per le equazioni di Cauchy-Riemann), una forma chiusa su un convesso è anche esatta, e dunque l'integrale è nullo.
 %% END
 %% RISP
@@ -115,6 +177,60 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
 %% RISP
     La risposta corretta è la $(B)$ e si rimanda alla dimostrazione del teorema dei residui
 %% END
+%% SCHEDA V
+    Dato $\Omega\subset\C$ connesso, e una funzione olomorfa a valori reali $f:\Omega\longrightarrow\C$, $ f $ è costante su $\Omega$. 
+%% END
+%% RISP
+    L'affermazione è vera, e questo deriva direttamente dalle equazioni di Cauchy-Riemann. Infatti, se \[
+        f(x+i\,y) = u(x,y) + i\,v(x,y),\qquad x,y \in \R
+    \]ed $ f $ è a valori reali, allora $ v(x,y)\equiv 0 $, e dunque $ \partial_{x} u = \partial_{y} u \equiv 0 $, e poiché $ u $ è continua su un dominio connesso, necessariamente deve essere costante.
+%% END
+%% SCHEDA V
+    Data una funzione $F$ olomorfa sul dominio $\Omega$ convesso con $F'$ continua su $\Omega$ allora l'integrale $\int_{\gamma}F'(z)dz$ è uguale a 0 qualsiasi sia il cammino $\gamma$
+%% END
+%% RISP
+    L'affermazione è vera, come garantisce il teorema di Cauchy sui convessi. 
+%% END
+%% SCHEDA F
+    Esistono funzioni olomorfe su $ \C $ limitate ma non costanti.
+%% END
+%% RISP
+    L'affermazione è falsa: questo è garantito dal Teorema di Liouville, che afferma che se una funzione $ f: \C \longrightarrow \C $ è olomorfa su tutto $ \C $ e limitata, allora è costante.
+%% END
+%% SCHEDA F
+    Dato $Z(f)$ l'insieme degli zeri di una funzione $f:\Omega \subseteq \C\longrightarrow\C$ olomorfa su $\Omega$ allora $Z(f)$ può avere punti di accumulazione in un aperto di $\C$
+%% END
+%% RISP
+    L'affermazione è falsa, poiché gli zeri di una funzione olomorfa sono punti isolati. 
+%% END
+%% SCHEDA V
+    Facendo riferimento all'affermazione precedente, quest'ultima è vera in $ \R $? 
+
+    Ovvero, data $ f: A \subseteq \R \longrightarrow \R $, $ f \in C^{ \infty}(A) $, $ Z(f) $ luogo degli zeri di $ f $ può avere punti di accumulazione in un aperto di $ \R $?
+%% END
+%% RISP
+    Sì, ad esempio il luogo degli zeri di \[
+        f(x)= x^{2}\sin \left(\frac{1}{x}\right)
+    \]ha punti di accumulazione un intorno aperto dell'origine.
+%% END
+% %% SCHEDA V
+%     Data una funzione olomorfa $f:\Omega \subseteq \C\longrightarrow\C$ diversa dalla funzione nulla, allora per ogni zero $a$ della funzione $f$ esiste una prima derivata che non si annulla mai in $a$.
+% %% END
+% %% RISP
+    
+% %% END
+%% SCHEDA M
+    La funzione \[f(z)=\frac{\sin(z)\cos(z)}{z^2}\qquad \forall\, z\in\C\]in $z_0=0$ ha una singolarità di tipo:
+    \begin{itemize}
+        \item[(A)] eliminabile;
+        \item[(B)] polo di ordine $ 1 $; 
+        \item[(C)] polo di ordine $ 2 $;
+        \item[(D)] polo di ordine $ 3 $;
+    \end{itemize}
+%% END
+%% RISP
+    La risposta giusta è la $ (C) $, ovvero un polo di ordine $ 2 $.
+%% END
 
 %%% Lezione
 %%% Integrali
@@ -135,4 +251,22 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
         $\int_0^{2 \pi} \frac{\cos(2\theta)}{2 - \cos(\theta)}\dif \theta = i \int_{|z| = 1} \frac{z^4+1}{z^2(z^2-4z+1)} \dif z = 2 \pi i \left[ \operatorname{Res}(f,0) + \operatorname{Res}(f,2-\sqrt{3}) \right]$
 
     Dove $\operatorname{Res}(f,0) = 4i$ e $ \operatorname{Res}(f,2-\sqrt{3}) = -\frac{7}{\sqrt{3}}i $
+%% END
+%% SCHEDA M
+Dati due polinomi reali $P(x), Q(x)$ di grado rispettivamente $p$ e $q$. 
+    
+Data $C^{R}_{+}$ la semicirconferenza di raggio $R>>0$ e centro l'origine, contenuta nel semipiano $\mathcal{I}:\{z>0\}$, percorsa una volta in senso antiorario. 
+
+Sotto quali ipotesi \emph{minimali} su $p$ e $q$ vale la seguente uguaglianza? \[
+    \lim_{R\to+\infty}\int_{C^{R}_{+}}\frac{P(z)}{Q(z)}\dif z = 0
+\]
+\begin{itemize}
+    \item[(A)] qualsiasi siano $ p $ e $ q $; 
+    \item[(B)] $ q>p $
+    \item[(C)] $ q>p+2 $
+    \item[(D)] $ q> p+1 $
+\end{itemize}
+%% END
+%% RISP
+    La risposta corretta è $ (D) $, ovvero per $ q>p+1 $.
 %% END

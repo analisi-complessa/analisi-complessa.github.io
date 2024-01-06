@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- DOMANDA MULTIPLA -->
+<!-- DOMANDA FALSA -->
 <html lang="it">
 
 <head>
@@ -138,17 +138,6 @@
         }
 
         /* Aggiunto stile per pulsanti nel popup */
-        /* .popup-buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            left: 0px;
-            bottom: 0;
-            width: 100%;
-            padding: 0px;
-            padding-bottom: 18px;
-        } */
         .popup-buttons {
             justify-content: space-between;
             align-items: center;
@@ -171,23 +160,25 @@
         <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="../schede_png/png/1_5_M.png" alt="Immagine 1" width="100%"  style="max-width: 1100px;">
+        <img src="../schede_png/png/2_19_F.png" alt="Immagine 1" width="100%"  style="max-width: 1100px;">
         <br>
-
+        <!-- Risposte multiple -->
+        <div class="answers-container">
+            <div class="answer-box" onclick="sbagliato()">Vero</div>
+            <div class="answer-box" onclick="giusto()">Falso</div>
+        </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
-            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <!-- Risposta -->
         <div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
             <div class="popup">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="../schede_png/png/1_5_r.png" alt="Immagine 1" width="100%">
+                <img src="../schede_png/png/2_19_r.png" alt="Immagine 1" width="100%">
 
                 <!-- Pulsanti nel popup -->
                 <div class="popup-buttons">
-                    <button onclick="exit()">Esci</button>
                     <button onclick="goForward()">Vai Avanti</button>
                 </div>
             </div>
@@ -195,7 +186,7 @@
     </main>
 
     <script>
-        function openPopup() {
+        function sbagliato() {
             document.getElementById("popupOverlay").style.display = "flex";
         }
 
@@ -209,9 +200,15 @@
 
         function goForward() {
             // Aggiungi qui l'azione desiderata per "Vai Avanti"
-            window.location.href = '../end.html';
+            window.location.href = '2_20.html';
         }
 
+        // Funzione per gestire la selezione di una risposta
+        function giusto() {
+            // Aggiungi qui la logica per gestire la selezione della risposta (es. evidenzia la risposta selezionata)
+            alert("La tua risposta è quella giusta");
+            goForward();
+        }
     </script>
 </body>
 
