@@ -5,41 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analisi Complessa</title>
     <style>
-
-        /* Font: Computer Modern */
-
-        @font-face {
-            font-family: "Computer Modern";
-            src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
-        }
-        @font-face {
-            font-family: "Computer Modern";
-            src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
-            font-weight: bold;
-        }
-        @font-face {
-            font-family: "Computer Modern";
-            src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
-            font-style: italic, oblique;
-        }
-        @font-face {
-            font-family: "Computer Modern";
-            src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
-            font-weight: bold;
-            font-style: italic, oblique;
-        }
-
-        /* FINE */
         body {
             margin: 0;
             padding: 0;
-            font-family: "Computer Modern", sans-serif;
-            background-color: #fff; /* colore di sfondo */
+            background-image: url('Sfondo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
         }
 
         header {
-            background-color: #ffd700; /* giallo */
+            background-color: #000; /* giallo */
             padding: 10px;
+            color: #fff;
             text-align: center;
             border-radius: 0 0 0 0;
         }
@@ -65,13 +44,14 @@
             margin-top: 20px;
             padding: 30px 50px; /* aumenta le dimensioni del pulsante */
             border-radius: 5px;
-            background-color: #4caf50; /* colore verde */
+            background-color: #000; /* colore verde */
             color: #fff; /* testo bianco */
             border: none;
             cursor: pointer;
             font-size: 16px;
             position: relative;
-            overflow: hidden; /* Nasconde il contenuto in eccesso */
+            overflow: hidden;
+            width: 311px;
         }
 
         .progress-bar {
@@ -99,23 +79,23 @@
     <main>
         <div class="button-container">
             <button onclick="lezione1()">Funzioni in campo complesso
-                <!-- <div class="progress-bar" style="width: 50%;"></div>
-                <span class="percentage">50%</span> -->
+                <div class="progress-bar" style="width: 50%;"></div>
+                <span class="percentage">50%</span>
             </button>
             <button onclick="lezione2()">Funzioni olomorfe
-                <!-- <div class="progress-bar" style="width: 75%;"></div>
-                <span class="percentage">75%</span> -->
+                <div class="progress-bar" style="width: 75%;"></div>
+                <span class="percentage">75%</span>
             </button>
         </div>
         <div class="button-container">
             <button onclick="lezione3()">Integrali
-                <!-- <div class="progress-bar" style="width: 30%;"></div>
-                <span class="percentage">30%</span> -->
+                <div class="progress-bar" style="width: 30%;"></div>
+                <span class="percentage">30%</span>
             </button>
-            <!-- <button onclick="lezione4()">Lezione 4
+            <button onclick="lezione4()">Lezione 4
                 <div class="progress-bar" style="width: 90%;"></div>
                 <span class="percentage">90%</span>
-            </button> -->
+            </button>
         </div>
         <!-- <div class="button-container">
             <button onclick="lezione5()">Lezione 5
