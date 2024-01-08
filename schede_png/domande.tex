@@ -116,11 +116,11 @@ L'esponenziale complesso è una funzione periodica su $ \C $.
     La risposta è: \emph{vero}; infatti, l'esponenziale complesso è una funzione periodica su $ \C $, con periodo $ 2\pi \,i $.
 %% END
 %% SCHEDA V
-    Sia $f : \C \longrightarrow \C$ olomorfa, allora la sua restrizione su $\R$, ovvero $\restriction{f}{\R} : \R \longrightarrow \R$ è una funzione derivabile.
+    Sia $f : \C \longrightarrow \C$ olomorfa, allora la parte reale della sua restrizione su $\R$, ovvero $\operatorname{Re}\left(\restriction{f}{\R}\right) : \R \longrightarrow \R$ è una funzione derivabile.
 %% END
 %% RISP
-    Si può considerare $f = u(x,y) + i\, v(x,y)$, la restrizione di $f$ all'asse reale diventa $f = u(x,y)$, ma se richiediamo che anche il dominio sia solo l'asse reale, dobbiamo considerare $(x,y) = (x,0)$, da ciò si ha
-    $\restriction{f}{\R} = u(x,0)$. 
+    Si può considerare $f = u(x,y) + i\, v(x,y)$, la parte reale della restrizione di $f$ all'asse reale diventa $f = u(x,y)$, con $(x,y) = (x,0)$, da ciò si ha
+    $\operatorname{Re}\left(\restriction{f}{\R}\right) = u(x,0)$. 
     
     Poiché $f$ è olomorfa, $u$ è una funzione differenziabile, quindi $u(x,0)$ è derivabile e la sua derivata è 
     $f_{| \mathbb{R}}'(x) = \lim_{h \to 0} \frac{u(x+h) - u(x,0)}{h} = \frac{\partial u}{\partial x}(x,0)$
@@ -192,12 +192,12 @@ Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent
     Nel caso in cui la quantità numerabile di termini a indice negativo fosse finita, $z_0$ sarebbe un polo per $f$.
 %% END
 %% SCHEDA F
-    Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa tali che \[
+    Se $a$ è uno zero di una funzione olomorfa non identicamente nulla, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa tali che \[
         f(z) = g(z)(z-a)^m
     \]
 %% END
 %% RISP
-    È falso, perché $ g $ non deve annullarsi in $ a $.
+    È falso, perché $ g $ non deve annullarsi in $ a $, e inoltre è una proprietà locale.
 %% END
 %% SCHEDA F
     Se $ a $ è un polo semplice di $ f: \Omega \subseteq \C \longrightarrow \C $ e se esistono due funzioni $ g $ e $ h $ olomorfe in un intorno di $ a $ e tali che \begin{itemize}
@@ -212,7 +212,7 @@ Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent
     L'enunciato sarebbe vero se tra le ipotesi risultasse $ g(a)\neq 0 $
 %% END
 %% SCHEDA F
-    Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa con $ g(a)\neq 0 $ tali che \[
+    Se $a$ è uno zero di una funzione olomorfa non identicamente nulla, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa con $ g(a)\neq 0 $ tali che \[
         f(z) = g(z)(z-a)^m
     \]
 %% END
@@ -268,7 +268,7 @@ Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent
     L'affermazione è falsa, perché le derivate parziali esistono di $u, v$, ma a priori non sappiamo se siano o meno continue.
 %% END
 %% SCHEDA M
-    La disuguaglianza $|e^{z^2}| \leq e^{|z|^2}$.
+    La disuguaglianza $\left\vert e^{z^2}\right\vert \leq e^{|z|^2}$.
     \begin{itemize}
         \item[(A)] È sempre valida
         \item[(B)] Vale solo se ci restringiamo all'asse reale
@@ -284,7 +284,7 @@ Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent
     Esistono funzioni olomorfe non identicamente nulle che valgono costantemente zero sull'asse immaginario.
 %% END
 %% RISP
-    È falso: infatti gli zeri di funzioni olomorfe sono sempre isolati, inoltre l'insieme degli zeri di una funzione olomorfa è al più numerabile.
+    È falso: infatti gli zeri di funzioni olomorfe non identicamente nulle sono sempre isolati, inoltre l'insieme degli zeri di una funzione olomorfa (non identicamente nulla) è al più numerabile.
 %% END
 %% SCHEDA M
     Perché nella dimostrazione olomorfia implica analitictà consideriamo $\gamma_{z}$ e non $\gamma$?
@@ -293,7 +293,7 @@ Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent
     Quello che si vuole fare nei passi successivi è utilizzare il teorema dell'indice di Cauchy sui convessi: ecco perché si è dovuti andare a considerare la palla aperta $D(z_{0},r)$. Inoltre, essendo aperta, non si può trovare una $\gamma$ valida $\forall\,{z}$.
 %% END
 %% SCHEDA M
-    Una funzione olomorfa e illimitata in ogni intorno di un punto può appettere quel punto come discontinuità eliminabile: \begin{itemize}
+    Una funzione olomorfa e illimitata in ogni intorno di un punto può ammettere quel punto come discontinuità eliminabile: \begin{itemize}
         \item[(A)] sempre; 
         \item[(B)] mai; 
         \item[(C)] dipende dall'espressione della funzione
