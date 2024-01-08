@@ -225,7 +225,30 @@
         }
 
         function goForward() {
-            // Aggiungi qui l'azione desiderata per "Vai Avanti"
+            if ('2_19.html' == '../end.html') {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.removeItem('last_lez1');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.removeItem('last_lez2');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.removeItem('last_lez3');
+                }
+            } else {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.setItem('last_lez1', 'schede_html/2_19.html');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.setItem('last_lez2', 'schede_html/2_19.html');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.setItem('last_lez3', 'schede_html/2_19.html');
+                }
+                // if (localStorage.lezione_aperta == '1') {
+
+                // } else if (localStorage.lezione_aperta == '2') {
+
+                // } else if (localStorage.lezione_aperta == '3') {
+
+                // }
+            }
             window.location.href = '2_19.html';
         }
     </script>

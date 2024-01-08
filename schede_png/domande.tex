@@ -9,11 +9,50 @@ Le funzioni seno e coseno sono limitate in campo complesso.
         -1 &\le \cos x \le 1 & x&\in \R 
     \end{align*}e anzi, si dimostra che sono entrambe funzioni illimitate.
 %% END
+%% SCHEDA M
+Si può scrivere $\sin(z)$ come: \begin{itemize}
+    \item[(A)] $\frac{e^{-z}-e^z}{2}$; 
+    \item[(B)] $\frac{e^{-z}-e^z}{2i}$; 
+    \item[(C)] $\frac{e^{-z}-e^z}{-2}$;
+    \item[(D)] $\frac{e^{-z}-e^z}{-2i}$. 
+\end{itemize}
+%% END
+%% RISP
+    La risposta esatta è (D).
+%% END
+%% SCHEDA F
+    I logaritmi complessi di un numero reale strettamente negativo possono avere parte immaginaria nulla
+%% END
+%% RISP
+Considerando $z=x+iy$ con $x<0$ e $y\ge 0$ per ipotesi allora: 
+\[\log_{\C}(z)=\log_{\R}(\left\vert z\right\vert)+i(\text{arg}(z)+2k\pi)\]dove $k\in\mathbb{Z}$
+
+Ricordiamo che se $x<0$ e $y\ge 0$ allora  $\operatorname{arg}(z)=\operatorname{arctan}(\frac{y}{x})+\pi$ dunque 
+\[\operatorname{arg}(z)=\pi.\]Quindi $\log_{\C}(z)=\log_{\R}\left\vert z\right\vert+i(\pi+2k\pi)$ e la parte immaginaria si annulla se e solo se  $i\pi(1+2k)=0$ cioè $k=\frac{-1}{2}$ che è impossibile.
+%% END
+%% SCHEDA F
+$\log_{\C}\colon\C\setminus\{0\} \longrightarrow\C$ è una funzione continua
+%% END
+%% RISP
+    Non è continua su tutto $ \C $, bensì solo su \[
+        \C\setminus\{z\in\C \text{ t.c. } \operatorname{Re}(z) \le 0\}
+    \]
+%% END
 %% SCHEDA F
 In campo complesso vale l'uguaglianza: \[\log(z^2)=2\log(z) , \qquad  \forall z \in\C , z\neq0\]
 %% END
 %% RISP
     Questa uguaglianza è vera soltanto per il ramo principale del logaritmo, e quindi l'affermazione è \emph{falsa}.
+%% END
+%% SCHEDA F
+    Il seno complesso si annulla in punti immaginari puri non nulli
+%% END
+%% RISP
+Infatti usando la formula di addizione si ha 
+\[\sin (x+iy)=\sin(x)\cosh(y)+i\cos(x)\sinh(y)= 0+0i.\]
+Poiché $\cosh(y)$ è sempre positivo dalla prima si ha: $\sin(x)=0$ e questo implica che $\cos(x)\neq0$ che a sua volta implica $\sinh(y)=0$. 
+
+Ma quest'ultima è vera se e solo se $y=0$.
 %% END
 %% SCHEDA F
     L'esponenziale complesso è una funzione invertibile su tutto $ \C $
@@ -24,15 +63,27 @@ In campo complesso vale l'uguaglianza: \[\log(z^2)=2\log(z) , \qquad  \forall z 
 %% SCHEDA M
     Il logaritmo naturale del numero $ 2+2\,i $ è \begin{itemize}
         \item[(A)] $\log_{\R} (2\sqrt{2})+i(\pi/4+2k\pi)$, $ k \in \Z $, 
-        \item[(B)] $\log(8)+i(\pi/4+2k\pi)$, $ k \in \Z $, 
-        \item[(C)] $\log(8)+i(2\pi/3+2k\pi)$, $ k \in \Z $, 
-        \item[(D)]$\log(2\sqrt{2})+i\pi/4$, $ k \in \Z $.
+        \item[(B)] $\log_{\R}(8)+i(\pi/4+2k\pi)$, $ k \in \Z $, 
+        \item[(C)] $\log_{\R}(8)+i(2\pi/3+2k\pi)$, $ k \in \Z $, 
+        \item[(D)]$\log_{\R}(2\sqrt{2})+i\pi/4$, $ k \in \Z $.
     \end{itemize}
 %% END
 %% RISP
     La soluzione è \[
         \log_{\R} (2\sqrt{2})+i(\pi/4+2k\pi),\qquad k \in \Z
     \]
+%% END
+%% SCHEDA F
+    La parte principale di $ \log(-i) $ è $ \frac{3}{2}\pi\,i $
+%% END
+%% RISP
+Ricordando che l'argomento sta fra $-\pi$ e $\pi$, il risultato è $\frac{-i\,\pi}{2}$ 
+%% END
+%% SCHEDA M
+    Dimostrare che $\displaystyle \frac{w}{2\pi i}  \in \Z$ se e solo se $\displaystyle e^w=1$   
+%% END
+%% RISP
+    $e^w=1$ se e solo se $w=\log(1)=2ik\pi$, con $k \in \Z$, dunque equivalentemente $\frac{w}{2\pi i}  \in \Z$
 %% END
 %% SCHEDA M
     L'equazione \[
@@ -45,8 +96,16 @@ In campo complesso vale l'uguaglianza: \[\log(z^2)=2\log(z) , \qquad  \forall z 
     \end{itemize}
 %% END
 %% RISP
-    L'equazione ha un'infinità numerabile di soluzioni, quindi la risposta giusta è $(B)$. 
+    L'equazione ha un'infinità numerabile di soluzioni, quindi la risposta giusta è (B). 
 %% END 
+%% SCHEDA M
+    Dimostrare che se $e^z=1$ allora $\cos(\frac{z}{i})=1$
+%% END
+%% RISP
+    $z=\log_{\C} (1)=2ik\pi$, con $k \in \Z$, quindi \[
+        \cos\left(\frac{z}{i}\right)=\cos\left(\frac{2ik\pi}{i}\right)=\cos\left(2k\pi\right)=1, \forall k \in \Z
+    \]
+%% END
 
 %%% Lezione
 %%% Funzioni olomorfe
@@ -66,11 +125,52 @@ L'esponenziale complesso è una funzione periodica su $ \C $.
     Poiché $f$ è olomorfa, $u$ è una funzione differenziabile, quindi $u(x,0)$ è derivabile e la sua derivata è 
     $f_{| \mathbb{R}}'(x) = \lim_{h \to 0} \frac{u(x+h) - u(x,0)}{h} = \frac{\partial u}{\partial x}(x,0)$
 %% END
+%% SCHEDA M
+    Cosa afferma il teorema sulle equazioni di Cauchy - Riemann?
+%% END
+%% RISP
+Siano $ \Omega \subseteq \C $ una regione, $ z_0 \coloneqq x_0+i\,y_0 \in \Omega $, $ f:\Omega\longrightarrow \C $ e $ u,v $ le parti reali ed immaginarie di $ f $, rispettivamente, come sopra.
+
+Allora $ f $ è olomorfa in $ z_0 $ $ \iff $ 
+\begin{enumerate}
+    \item $ u,v $ sono differenziabili in $ (x_0,y_0) $
+    \item $ \displaystyle \begin{cases}
+        \dpd{u}{x}(x_0,y_0) = \dpd{v}{y}(x_0,y_0)\\[2ex]
+        \dpd{u}{y}(x_0,y_0) = -\dpd{v}{x}(x_0,y_0)
+    \end{cases} $
+\end{enumerate}
+%% END
 %% SCHEDA F
 Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differenziale $f(z) \dif z$ sia esatta.
 %% END
 %% RISP
     L'affermazione è falsa, poiché si richiede solo che la forma sia chiusa.
+%% END
+%% SCHEDA V
+Esiste un punto in cui $\overline{z}^2$ è olomorfa.
+%% END
+%% RISP
+Scriviamo $\overline{z}^2$ come $(x-iy)^2=x^2-y^2-2ixy$, e osserviamo che le equazioni di Cauchy-Riemann valgono in $0$.
+%% END
+%% SCHEDA V
+    La restrizione ad $ \R $ di $f(z)=(z-\overline{z})^2$ è olomorfa.
+%% END
+%% RISP
+Scriviamo $f(z)$ come $[x+iy-(x-iy)]^2=-4y^2$, e osserviamo che se $ z $ è reale $y=\operatorname{Im}(z)=0$ e valgono le equazioni di Cauchy-Riemann.
+%% END
+%% SCHEDA M
+    Cosa afferma il teorema di analicità delle funzioni olomorfe?
+%% END
+%% RISP
+    Sia $\Omega \subseteq \C$ una regione, e sia $ f \in H(\Omega) $. 
+        
+    Allora $ f \in \mathcal{A}(\Omega) $. 
+
+    In particolare, per ogni $ z_0 \in \Omega$ esiste $ r>0 $ tale che \[
+        f(z)= \displaystyle \sum_{n=0}^{\infty} c_{n}(z-z_0)^{n},\quad \forall\, z \in D(z_0;r) 
+    \]con \[
+        c_{n}=\frac{1}{2\pi\,i} \int_{\gamma} \frac{f(\xi)}{(\xi-z_0)^{n+1}}\dif \xi ,\quad \forall\, n\ge 0  
+    \]dove $\gamma$ è una qualsiasi circonferenza centrata in $ z_0 $ di raggio minore di $ r $ percorsa una volta in senso antiorario.
 %% END
 %% SCHEDA M
     In riferimento alla dimostrazione del teorema di analiticità delle funzioni olomorfe, quale delle affermazioni non è vera?
@@ -86,12 +186,30 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     La risposta corretta è (D).
 %% END
 %% SCHEDA F
+Se $f(z)$ ha una singolarità isolata in $z_0$ e lo sviluppo in serie di Laurent di $f$ centrato in $z_0$ ha una quantità numerabile non nulla di termini a indice negativo, allora $f$ ha una singolarità essenziale in $z_0$.
+%% END
+%% RISP
+    Nel caso in cui la quantità numerabile di termini a indice negativo fosse finita, $z_0$ sarebbe un polo per $f$.
+%% END
+%% SCHEDA F
     Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa tali che \[
         f(z) = g(z)(z-a)^m
     \]
 %% END
 %% RISP
     È falso, perché $ g $ non deve annullarsi in $ a $.
+%% END
+%% SCHEDA F
+    Se $ a $ è un polo semplice di $ f: \Omega \subseteq \C \longrightarrow \C $ e se esistono due funzioni $ g $ e $ h $ olomorfe in un intorno di $ a $ e tali che \begin{itemize}
+        \item $ \displaystyle f(z)=\frac{g(z)}{h(z)} $; 
+        \item $ h(a)= 0 $; 
+        \item $ h'(a)\neq 0 $
+    \end{itemize}allora \[
+        \operatorname{Res}(f,a) = \frac{g(a)}{h'(a)}
+    \]
+%% END
+%% RISP
+    L'enunciato sarebbe vero se tra le ipotesi risultasse $ g(a)\neq 0 $
 %% END
 %% SCHEDA F
     Se $a$ è uno zero di una funzione olomorfa, allora $\exists!\, m \in \N$, $ \exists\, g$ funzione olomorfa con $ g(a)\neq 0 $ tali che \[
@@ -109,6 +227,7 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
 %% RISP
     È vero: infatti dal teorema fondamentale dell'algebra $f$ ammette esattamente $d$ zeri. Sia, quindi, $w$ uno zero di $f$. Dal teorema degli zeri per funzioni olomorfe, sappiamo che $w$ avrà ordine $k$, dove si ha che $k$ è l'ordine della prima derivata di $f$ che non si annulla in $w$.
 %% END
+
 %% SCHEDA V
     Non esistono, in campo complesso, funzioni che siano analitiche e non olomorfe
 %% END
@@ -117,10 +236,21 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
         \mathcal{A}(\Omega) = H(\Omega)
     \]
 %% END
+%% SCHEDA M
+    In $ \R $, $ f: A \subseteq \R \longrightarrow \R $, $ f \in C^{ \infty}(A) $ implica $ f $ analitica su $ A $? E il viceversa?
+%% END
+%% RISP
+    Sebbene $ f $ analitica su $ A $ implichi che $ f \in C^{ \infty}$, il viceversa \emph{non vale}, ed un facile controesempio è la funzione $ C^{\infty} (\R) $, ma non analitica in $ x_0=0 $: \[
+        f(x)=\begin{cases}
+            e^{-1/x^{2}} & x\neq 0 \\ 
+            0 & x=0
+        \end{cases}
+    \]
+%% END
 %% SCHEDA F
-    Sia $\Omega$ una regione tale che se $z \in \Omega$, allora $\bar{z} \in \Omega$, e sia $f \in \mathcal{H}(\Omega)$.
+    Sia $\Omega$ una regione tale che se $z \in \Omega$, allora $\bar{z} \in \Omega$, e sia $f \in H(\Omega)$.
     
-    Allora $f(\bar{z}) \in \mathcal{H}(\Omega)$
+    Allora $f(\bar{z}) \in H(\Omega)$
 %% END
 %% RISP
     L'affermazione è falsa: un controesempio immediato è fornito dalla funzione $ f=\Id_{\C} $, che è olomorfa, mentre $ f(\bar(z))=\bar{z} $ \emph{non è} olomorfa su $ \C $.
@@ -148,13 +278,19 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     \end{itemize}
 %% END
 %% RISP
-    La risposta corretta è la $ (A) $.
+    La risposta corretta è la (A).
 %% END
 %% SCHEDA F
-    Esistono funzioni olomorfe che valgono costantemente zero sull'asse immaginario.
+    Esistono funzioni olomorfe non identicamente nulle che valgono costantemente zero sull'asse immaginario.
 %% END
 %% RISP
     È falso: infatti gli zeri di funzioni olomorfe sono sempre isolati, inoltre l'insieme degli zeri di una funzione olomorfa è al più numerabile.
+%% END
+%% SCHEDA M
+    Perché nella dimostrazione olomorfia implica analitictà consideriamo $\gamma_{z}$ e non $\gamma$?
+%% END
+%% RISP
+    Quello che si vuole fare nei passi successivi è utilizzare il teorema dell'indice di Cauchy sui convessi: ecco perché si è dovuti andare a considerare la palla aperta $D(z_{0},r)$. Inoltre, essendo aperta, non si può trovare una $\gamma$ valida $\forall\,{z}$.
 %% END
 %% SCHEDA M
     Una funzione olomorfa e illimitata in ogni intorno di un punto può appettere quel punto come discontinuità eliminabile: \begin{itemize}
@@ -164,7 +300,7 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     \end{itemize}
 %% END
 %% RISP
-    La risposta giusta è la $ (B) $, poiché se la discontinuità è eliminabile allora la funzione deve essere limitata in un intorno. 
+    La risposta giusta è la (B), poiché se la discontinuità è eliminabile allora la funzione deve essere limitata in un intorno. 
 %% END
 %% SCHEDA M
     Sia $f$ una funzione olomorfa e sia $a$ un suo polo. Allora, detta $Q$ la parte principale di $f$ in $a$, e presa $\gamma$ una qualsiasi curva chiusa il cui supporto non contenga $a$, allora $\int_{\gamma} Q(z) \dif z$ è pari a \begin{itemize}
@@ -175,7 +311,7 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     \end{itemize}
 %% END
 %% RISP
-    La risposta corretta è la $(B)$ e si rimanda alla dimostrazione del teorema dei residui
+    La risposta corretta è la (B) e si rimanda alla dimostrazione del teorema dei residui
 %% END
 %% SCHEDA V
     Dato $\Omega\subset\C$ connesso, e una funzione olomorfa a valori reali $f:\Omega\longrightarrow\C$, $ f $ è costante su $\Omega$. 
@@ -213,12 +349,14 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
         f(x)= x^{2}\sin \left(\frac{1}{x}\right)
     \]ha punti di accumulazione un intorno aperto dell'origine.
 %% END
-% %% SCHEDA V
-%     Data una funzione olomorfa $f:\Omega \subseteq \C\longrightarrow\C$ diversa dalla funzione nulla, allora per ogni zero $a$ della funzione $f$ esiste una prima derivata che non si annulla mai in $a$.
-% %% END
-% %% RISP
-    
-% %% END
+%% SCHEDA V
+    Data una funzione olomorfa $f:\Omega \subseteq \C\longrightarrow\C$ diversa dalla funzione nulla, allora per ogni zero $a$ della funzione $f$ esiste una prima derivata che non si annulla mai in $a$.
+%% END
+%% RISP
+    Questo è vero: infatti, ciascuno zero $ a $ ha un ordine $ m $, e pertanto \[
+        f(z) = (z-a)^{m}\, g(z),\qquad g \in H(\Omega), g(a)\neq 0.
+    \]
+%% END
 %% SCHEDA M
     La funzione \[f(z)=\frac{\sin(z)\cos(z)}{z^2}\qquad \forall\, z\in\C\]in $z_0=0$ ha una singolarità di tipo:
     \begin{itemize}
@@ -229,11 +367,89 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
     \end{itemize}
 %% END
 %% RISP
-    La risposta giusta è la $ (C) $, ovvero un polo di ordine $ 2 $.
+    La risposta giusta è la (B), ovvero un polo di ordine $ 1 $.
+%% END
+% %% SCHEDA F
+%     Data una funzione $f$ non costante olomorfa su una regione $\Omega$ e il suo modulo, la funzione $|f|$; allora $|f|$ può avere massimi locali in punti di $\Omega$.
+% %% END
+% %% RISP
+%     \lipsum[1]
+% %% END
+%% SCHEDA V
+Siano $f$ e $g$ due funzioni analitiche nella regione $\Omega$, con \[f(z)=g(z),\qquad \forall \, z\in B \subset\Omega\]con $ B$ aperto e connesso. Allora se $B$ ha un punto di accumulazione in $\Omega$ allora $f(z)=g(z),  \forall z\in\Omega$
+%% END
+%% RISP
+    È vero, infatti gli zeri di funzioni analitiche \emph{non identicamente nulle} sono isolati: segue che se gli zeri di $ f-g $ (funzione analitica) non sono isolati, allora $ f-g \equiv 0$. 
+
+    Un esempio classico di questo è fornito dalle due funzioni \begin{align*}
+        f(z) &= \sin^{2}(z) + \cos^{2}(z)\\ 
+        g(z) &= 1
+    \end{align*}che coincidono su $ \R \subseteq \C$, e pertanto devono coincidere su tutto $ \C $.
+%% END
+%% SCHEDA F
+    Il seguente enunciato è il teorema dell'indice di Cauchy.
+
+    Sia $f\in H$ con $\Omega$ convesso e sia $\gamma$ un cammino chiuso. Allora $\forall\,{z}\in\Omega$ si ha che \[
+        f(z)\operatorname{Ind}_{\gamma}(z)=\frac{1}{2i\pi}\int_{\gamma}\frac{f(\xi)}{\xi-z}\dif z
+    \]
+%% END
+%% RISP
+Il teorema vale $\forall\,{z}\in\Omega$ con $z\notin\gamma^{\star}$
+%% END
+%% SCHEDA V
+$e^{\frac{-1}{z^2}}$ ha una singolarità essenziale.
+%% END
+%% RISP
+Scrivendo lo sviluppo in serie di Laurent centrato in 0 della funzione, a partire dallo sviluppo in serie di Taylor di $e^z$, si ottengono infiniti termini di indice negativo.
+%% END
+%% SCHEDA F
+    $ \operatorname{Re}(z) : \C \longrightarrow \C $ è una funzione analitica
+%% END
+%% RISP
+    Non valendo le equazioni di Cauchy-Riemann, la funzione non è olomorfa, e dunque neanche analitica.
+%% END
+%% SCHEDA M
+    Dire se le seguenti definizioni sono corrette: \begin{itemize}
+        \item $a$ è una singolarità eliminabile se e solo se $\lim_{z \to a} f(z)$ esiste finito
+        \item $a$ è un polo se e solo se $\lim_{z\to a} f(z)=+\infty$
+        \item $a$ è una singolarità essenziale se e solo se non esistono i seguenti limiti $\lim_{z \to a} f(z)$ e $\lim_{z \to a} \left\vert f(z)\right\vert$
+    \end{itemize}
+%% END
+%% RISP
+    La definizione di polo è errata: $ a $ è un polo se e solo se \[
+        \lim_{z\to a} \left\vert f(z)\right\vert = + \infty
+    \]
+%% END
+%% SCHEDA M
+Quali sono le principali differenze tra il campo reale e quello complesso?
+%% END
+%% RISP
+    \begin{itemize}
+        \item L'esponenziale complesso è periodico; 
+        \item le funzioni olomorfe sono analitiche;
+        \item gli zeri di funzioni olomorfe non identicamente nulle sono isolati; 
+        \item in $ \C $ vale il Teorema di Liouville.
+    \end{itemize}
+%% END
+%% SCHEDA F
+    Il teorema dei residui ha il seguente enunciato.
+
+    Sia $\Omega$ un aperto connesso, siano $a_{1},a_{2},\dots,a_{m}$ punti in $\Omega$ con $m\in\N$ e sia $f\in H\left(\Omega\setminus\{a_{i}\}\right)$ tale che $a_{i}$ siano singolarità isolate $\forall{i}$. Allora per ogni cammino chiuso $\gamma$ tale che $a_{i}\notin\gamma^{\star}$ $\forall\,{i}$ si ha: \[\int_{\gamma}f(z)\dif z=2i\pi\sum_{k=1}^m \operatorname{Ind}_{\gamma}(a_{k})\operatorname{Res}(f,a_{k})\]
+%% END
+%% RISP
+    L'enunciato del teorema non è completo; infatti gli $a_{i}$ devono essere poli $\forall\,{i}$.
 %% END
 
 %%% Lezione
 %%% Integrali
+%% SCHEDA M
+    Qual è la definizione di integrale su un cammino in $ \C $?
+%% END
+%% RISP
+Sia $ f:\Omega \subseteq \C \longrightarrow \C $ continua e sia $ \gamma:[a,b]\longrightarrow \C $ un cammino tale che $ \gamma^{\star} \subseteq \Omega $. Si definisce \[
+    \int_{\gamma}f(z)\dif z \coloneqq \int_{a}^{b} f\left(\gamma(t)\right)  \,\gamma'(t)\dif t
+\]
+%% END
 %% SCHEDA M
     Risolvere il seguente integrale \[\int_0^{2 \pi} \frac{\cos(2\theta)}{2 - \cos(\theta)}\dif \theta\]
 %% END
@@ -242,7 +458,7 @@ Le equazioni di Cauchy-Riemann sono equivalenti a richiedere che la forma differ
         \frac{2 \pi}{3}(7 \sqrt{3} -12 )
     \]Per trovarla si utilizza la sostituzione $z = e^{i \theta}$, da cui si ricava
     \begin{align*}
-        \cos(\theta) &= \frac{z + z^-1}{2} = \frac{z^2+1}{2z}\\
+        \cos(\theta) &= \frac{z + z^{-1}}{2} = \frac{z^2+1}{2z}\\
         \cos(2\theta) &= \frac{z^4+1}{2z^2}
     \end{align*}
 
@@ -268,5 +484,59 @@ Sotto quali ipotesi \emph{minimali} su $p$ e $q$ vale la seguente uguaglianza? \
 \end{itemize}
 %% END
 %% RISP
-    La risposta corretta è $ (D) $, ovvero per $ q>p+1 $.
+    La risposta corretta è (D), ovvero per $ q>p+1 $.
+%% END
+%% SCHEDA M
+Qual è il risultato del seguente integrale?
+\[\int_0^{2\pi} \frac{\dif\theta}{4\cos\theta+5}\]
+\begin{itemize}
+    \item[(A)] $ 0 $;
+    \item[(B)] $\frac{2}{3} \pi $;
+    \item[(C)] $\pi$; 
+    \item[(D)] $\frac{\pi}{2}$.
+\end{itemize}
+%% END
+%% RISP
+    La risposta corretta è la (B).
+%% END
+%% SCHEDA M
+    Qual è il risultato del seguente integrale?
+    \[
+        \int_{-\infty}^{+\infty}\frac{e^{2ix}}{1+x^2}\dif x
+    \]
+    \begin{itemize}
+        \item[(A)] $\pi/e$;
+        \item[(B)] $0$;
+        \item[(C)] $\pi$; 
+        \item[(D)] $i\pi/\sqrt{2}$.
+    \end{itemize}
+%% END
+%% RISP
+    La risposta corretta è la (A). 
+%% END
+%% SCHEDA M
+    Calcolare le singolarità della seguente funzione e classificarle. \[
+        f(z)=\frac{e^{\pi zi}}{(z^2+1)(z^2+25)}
+    \]
+%% END
+%% RISP
+    Le singolarità sono: 
+   \[
+       z_1 = i,\quad z_2=-1,\quad z_3=5i,\quad z_4=-5i
+   \]Tutti i poli sono semplici, poiché per tutti esiste finito e non nullo il limite \[
+    \lim_{z\to z_j} (z-z_j)f(z),\qquad j=1,2,3,4
+   \]Calcoliamo ad esempio il limite per $ z_1 $: \begin{align*}
+        \lim_{z\to z_1} (z-z_1)f(z) &=\lim_{z\to i} (z-i)\frac{e^{\pi z\,i}}{(z+1)(z-i)(z+5i)(z-5i)}\\ 
+        &= \frac{e^{-\pi}}{48\,i}
+   \end{align*}
+%% END
+%% SCHEDA M
+    Utilizzando la risposta della domanda precedente, calcolare il seguente integrale: \[
+        \int_0^{+\infty}\frac{\cos{\pi x}+2}{(x^2+1)(x^2+25)}\dif x
+    \]
+%% END
+%% RISP
+    Si ha che \[
+        \int_0^{+\infty}\frac{\cos{\pi x}+2}{(x^2+1)(x^2+25)}\dif x=\pi (\frac{e^{-\pi}}{48}-\frac{e^{-5\pi}}{240})+\frac{\pi}{30}
+    \]
 %% END

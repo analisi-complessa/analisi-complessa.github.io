@@ -54,6 +54,17 @@
             width: 311px;
         }
 
+        .reset-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff0000; /* colore rosso */
+            color: #fff; /* testo bianco */
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         .progress-bar {
             position: absolute;
             bottom: 0;
@@ -72,29 +83,27 @@
         }
     </style>
 </head>
-<body onload="localStorage.setItem('test', 'Ciao');">
+<body onload="start();">
     <header>
         <h1>Analisi Complessa</h1>
     </header>
     <main>
         <div class="button-container">
-            <button onclick="lezione1()">Funzioni in campo complesso
-                <div class="progress-bar" style="width: 50%;"></div>
-                <span class="percentage">50%</span>
+            <button onclick="lezione1()">Nozioni preliminari
+                <!-- <div class="progress-bar" style="width: 50%;"></div>
+                <span class="percentage">50%</span> -->
             </button>
+        </div>
+        <div class="button-container">
             <button onclick="lezione2()">Funzioni olomorfe
-                <div class="progress-bar" style="width: 75%;"></div>
-                <span class="percentage">75%</span>
+                <!-- <div class="progress-bar" style="width: 50%;"></div>
+                <span class="percentage">50%</span> -->
             </button>
         </div>
         <div class="button-container">
             <button onclick="lezione3()">Integrali
-                <div class="progress-bar" style="width: 30%;"></div>
-                <span class="percentage">30%</span>
-            </button>
-            <button onclick="lezione4()">Lezione 4
-                <div class="progress-bar" style="width: 90%;"></div>
-                <span class="percentage">90%</span>
+                <!-- <div class="progress-bar" style="width: 30%;"></div>
+                <span class="percentage">30%</span> -->
             </button>
         </div>
         <!-- <div class="button-container">
@@ -107,34 +116,44 @@
                 <span class="percentage">60%</span>
             </button>
         </div> -->
+        <div style="width: 311px; border: 2px solid #000; padding: 20px; border-radius: 15px; background-color: #fff; text-align: left; font-size: 11px;">Un sito di: <ul><li>Andrea Marchetti</li><li>Chiara Ortone</li><li>Simone Pacini</li><li>Davide Peccioli</li><li>Piero Possidente</li></ul></div>
+        
+        <!-- Pulsante Reset -->
+        <div class="reset-button" onclick="reset()">Reset</div>
     </main>
     
     <script>
         function lezione1() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/1_1.html';
+            if ('last_lez1' in localStorage) {
+                window.location.href = localStorage.getItem('last_lez1');
+            } else {
+                window.location.href = 'schede_html/1_1.html';
+            }
+            localStorage.setItem('lezione_aperta', 1);
         }
         function lezione2() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/2_1.html';
+            if ('last_lez2' in localStorage) {
+                window.location.href = localStorage.getItem('last_lez2');
+            } else {
+                window.location.href = 'schede_html/2_1.html';
+            }
+            localStorage.setItem('lezione_aperta', 2);
         }
         function lezione3() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/3_1.html';
+            if ('last_lez3' in localStorage) {
+                window.location.href = localStorage.getItem('last_lez3');
+            } else {
+                window.location.href = 'schede_html/3_1.html';
+            }
+            localStorage.setItem('lezione_aperta', 3);
         }
-        function lezione4() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/4_1.html';
-        }
-        function lezione5() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/5_1.html';
-        }
-        function lezione6() {
-            // alert( localStorage.getItem('test') );
-            window.location.href = 'schede_html/6_1.html';
+
+        // Aggiunta della funzione reset
+        function reset() {
+            localStorage.removeItem('last_lez1');
+            localStorage.removeItem('last_lez2');
+            localStorage.removeItem('last_lez3');
         }
     </script>
 </body>
 </html>
-<!-- Vedi link https://it.javascript.info/localstorage -->

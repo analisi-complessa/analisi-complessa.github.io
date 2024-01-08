@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- DOMANDA MULTIPLA -->
+<!-- DOMANDA VERA -->
 <html lang="it">
 
 <head>
@@ -139,31 +139,81 @@
         <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="../schede_png/png/2_12_M.png" alt="Immagine 1" width="100%"  style="max-width: 1100px; border: 2px solid #000; border-radius: 15px; background-color: #fff">
+        <img src="../schede_png/png/2_12_F.png" alt="Immagine 1" width="100%"  style="max-width: 1100px; border: 2px solid #000; border-radius: 15px; background-color: #fff">
         <br>
-
+        <!-- Risposte multiple -->
+        <div class="answers-container">
+            <div class="answer-box" onclick="sbagliato()">Vero</div>
+            <div class="answer-box" onclick="giusto()">Falso</div>
+        </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
-            <button onclick="openPopup()">Mostra Risposta</button>
         </div>
 
         <div class="popup-overlay" id="popupOverlay" style="display: none;">
             <div class="popup" style="min-width: 300px;">
                 <span class="popup-close" onclick="closePopup()">&times;</span>
-                <img src="../schede_png/png/2_12_r.png" alt="Immagine 1" width="100%">
+        
+                <!-- Contenuto comune del popup -->
+                <div class="popup-content">
 
-                <!-- Pulsanti nel popup -->
-                <div class="popup-buttons">
-                    <button onclick="exit()">Esci</button>
-                    <button onclick="goForward()">Vai Avanti</button>
+                    <!-- Contenuto specifico per "Giusto" -->
+                    <div class="popup-content-vero" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per "Vero" -->
+                        <p>Hai scelto la risposta giusta.</p>
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="goForward()">Vai Avanti</button>
+                        </div>
+                    </div>
+            
+                    <!-- Contenuto specifico per "Sbagliato" -->
+                    <div class="popup-content-falso" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per "Falso" -->
+                        <p>La tua risposta è sbagliata.</p>
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="showAnswer()">Mostra la risposta</button>
+                        </div>
+                    </div>
+            
+                    <!-- Contenuto specifico per Mostra risposta -->
+                    <div class="popup-content-terzo" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per il terzo popup -->
+                        <img src="../schede_png/png/2_12_r.png" alt="Immagine 1" width="100%">
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="goForward()">Vai Avanti</button>
+                        </div>
+                    </div>
                 </div>
+        
             </div>
         </div>
     </main>
 
     <script>
-        function openPopup() {
+        function sbagliato() {
             document.getElementById("popupOverlay").style.display = "flex";
+            document.querySelector(".popup-content-falso").style.display = "block";
+            document.querySelector(".popup-content-vero").style.display = "none";
+            document.querySelector(".popup-content-terzo").style.display = "none";
+        }
+
+        function giusto() {
+            document.getElementById("popupOverlay").style.display = "flex";
+            document.querySelector(".popup-content-vero").style.display = "block";
+            document.querySelector(".popup-content-falso").style.display = "none";
+            document.querySelector(".popup-content-terzo").style.display = "none";
+        }
+
+        function showAnswer() {
+            document.querySelector(".popup-content-terzo").style.display = "block";
+            document.querySelector(".popup-content-vero").style.display = "none";
+            document.querySelector(".popup-content-falso").style.display = "none";
         }
 
         function closePopup() {
@@ -175,10 +225,32 @@
         }
 
         function goForward() {
-            // Aggiungi qui l'azione desiderata per "Vai Avanti"
+            if ('2_13.html' == '../end.html') {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.removeItem('last_lez1');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.removeItem('last_lez2');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.removeItem('last_lez3');
+                }
+            } else {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.setItem('last_lez1', 'schede_html/2_13.html');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.setItem('last_lez2', 'schede_html/2_13.html');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.setItem('last_lez3', 'schede_html/2_13.html');
+                }
+                // if (localStorage.lezione_aperta == '1') {
+
+                // } else if (localStorage.lezione_aperta == '2') {
+
+                // } else if (localStorage.lezione_aperta == '3') {
+
+                // }
+            }
             window.location.href = '2_13.html';
         }
-
     </script>
 </body>
 

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- DOMANDA VERA -->
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Complessa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('../Sfondo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #000; /* giallo */
+            color: #fff;
+            padding: 10px;
+            padding-left: 40px;
+            text-align: center;
+            border-radius: 0 0 0 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        img {
+            margin-bottom: 20px; /* Aumenta la distanza dalla immagine */
+        }
+
+        .answers-container {
+            display: flex;
+            flex-wrap: wrap; /* Per consentire il wrap su più righe */
+            justify-content: center;
+            margin-top: 20px;
+            width: 60%; /* Riduci la larghezza per rendere più piccoli i pulsanti */
+        }
+
+        .answer-box {
+            border: 2px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 10px;
+            width: 40%; /* Riduci la larghezza per rendere più stretti i pulsanti */
+            max-width: 300px;
+            margin-bottom: 10px; /* Aggiungi spazio tra i pulsanti */
+            margin-left: 15px;
+            margin-right: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 20px 40px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 40px;
+            margin-top: 20px; /* Riduci la distanza dal basso */
+            margin-bottom: 20px;
+        }
+
+        button+button {
+            margin-left: 20px; /* Aumenta la distanza tra i pulsanti */
+        }
+
+        /* Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 700px; /* Larghezza massima del popup */
+            height: 500px; /* Altezza del popup */
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Aggiunto stile per pulsanti nel popup */
+        .popup-buttons {
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            padding-bottom: 18px;
+        }
+
+        .popup-buttons button {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Analisi Complessa</h1>
+    </header>
+    <main>
+        <img src="../schede_png/png/2_27_F.png" alt="Immagine 1" width="100%"  style="max-width: 1100px; border: 2px solid #000; border-radius: 15px; background-color: #fff">
+        <br>
+        <!-- Risposte multiple -->
+        <div class="answers-container">
+            <div class="answer-box" onclick="sbagliato()">Vero</div>
+            <div class="answer-box" onclick="giusto()">Falso</div>
+        </div>
+        <div class="button-container">
+            <button onclick="exit()">Esci</button>
+        </div>
+
+        <div class="popup-overlay" id="popupOverlay" style="display: none;">
+            <div class="popup" style="min-width: 300px;">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+        
+                <!-- Contenuto comune del popup -->
+                <div class="popup-content">
+
+                    <!-- Contenuto specifico per "Giusto" -->
+                    <div class="popup-content-vero" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per "Vero" -->
+                        <p>Hai scelto la risposta giusta.</p>
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="goForward()">Vai Avanti</button>
+                        </div>
+                    </div>
+            
+                    <!-- Contenuto specifico per "Sbagliato" -->
+                    <div class="popup-content-falso" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per "Falso" -->
+                        <p>La tua risposta è sbagliata.</p>
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="showAnswer()">Mostra la risposta</button>
+                        </div>
+                    </div>
+            
+                    <!-- Contenuto specifico per Mostra risposta -->
+                    <div class="popup-content-terzo" style="display: none;">
+                        <!-- Contenuto aggiuntivo specifico per il terzo popup -->
+                        <img src="../schede_png/png/2_27_r.png" alt="Immagine 1" width="100%">
+                        <br>
+                        <!-- Pulsanti nel popup -->
+                        <div class="popup-buttons">
+                            <button onclick="goForward()">Vai Avanti</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function sbagliato() {
+            document.getElementById("popupOverlay").style.display = "flex";
+            document.querySelector(".popup-content-falso").style.display = "block";
+            document.querySelector(".popup-content-vero").style.display = "none";
+            document.querySelector(".popup-content-terzo").style.display = "none";
+        }
+
+        function giusto() {
+            document.getElementById("popupOverlay").style.display = "flex";
+            document.querySelector(".popup-content-vero").style.display = "block";
+            document.querySelector(".popup-content-falso").style.display = "none";
+            document.querySelector(".popup-content-terzo").style.display = "none";
+        }
+
+        function showAnswer() {
+            document.querySelector(".popup-content-terzo").style.display = "block";
+            document.querySelector(".popup-content-vero").style.display = "none";
+            document.querySelector(".popup-content-falso").style.display = "none";
+        }
+
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+        }
+
+        function exit() {
+            window.location.href = '../index.html';
+        }
+
+        function goForward() {
+            if ('2_28.html' == '../end.html') {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.removeItem('last_lez1');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.removeItem('last_lez2');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.removeItem('last_lez3');
+                }
+            } else {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.setItem('last_lez1', 'schede_html/2_28.html');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.setItem('last_lez2', 'schede_html/2_28.html');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.setItem('last_lez3', 'schede_html/2_28.html');
+                }
+                // if (localStorage.lezione_aperta == '1') {
+
+                // } else if (localStorage.lezione_aperta == '2') {
+
+                // } else if (localStorage.lezione_aperta == '3') {
+
+                // }
+            }
+            window.location.href = '2_28.html';
+        }
+    </script>
+</body>
+
+</html>

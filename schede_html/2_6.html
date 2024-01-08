@@ -139,12 +139,12 @@
         <h1>Analisi Complessa</h1>
     </header>
     <main>
-        <img src="../schede_png/png/2_6_F.png" alt="Immagine 1" width="100%"  style="max-width: 1100px; border: 2px solid #000; border-radius: 15px; background-color: #fff">
+        <img src="../schede_png/png/2_6_V.png" alt="Immagine 1" width="100%"  style="max-width: 1100px; border: 2px solid #000; border-radius: 15px; background-color: #fff">
         <br>
         <!-- Risposte multiple -->
         <div class="answers-container">
-            <div class="answer-box" onclick="sbagliato()">Vero</div>
-            <div class="answer-box" onclick="giusto()">Falso</div>
+            <div class="answer-box" onclick="giusto()">Vero</div>
+            <div class="answer-box" onclick="sbagliato()">Falso</div>
         </div>
         <div class="button-container">
             <button onclick="exit()">Esci</button>
@@ -225,7 +225,23 @@
         }
 
         function goForward() {
-            // Aggiungi qui l'azione desiderata per "Vai Avanti"
+            if ('2_7.html' == '../end.html') {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.removeItem('last_lez1');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.removeItem('last_lez2');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.removeItem('last_lez3');
+                }
+            } else {
+                if (localStorage.lezione_aperta == '1') {
+                    localStorage.setItem('last_lez1', 'schede_html/2_7.html');
+                } else if (localStorage.lezione_aperta == '2') {
+                    localStorage.setItem('last_lez2', 'schede_html/2_7.html');
+                } else if (localStorage.lezione_aperta == '3') {
+                    localStorage.setItem('last_lez3', 'schede_html/2_7.html');
+                }
+            }
             window.location.href = '2_7.html';
         }
     </script>
