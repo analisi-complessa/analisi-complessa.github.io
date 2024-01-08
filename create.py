@@ -2,6 +2,7 @@ import numpy as np
 import os
 import sys
 import shutil
+import time
 
 os.system("rm -r schede_html")
 os.system("mkdir schede_html")
@@ -72,4 +73,6 @@ for lezione in range(1, len(domande_tutte), 1):
                 with open( "schede_html/" + str(lezione) + "_" + str(i) + ".html", 'w') as file: ## Scrive le sostituizioni sul file
                     file.write(data)
 
-
+os.system("git add .")
+os.system('git commit -m "' + str(time.ctime()) + '"')
+os.system('git push')
